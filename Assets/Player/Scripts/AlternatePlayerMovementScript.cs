@@ -64,7 +64,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
 
     private bool noCollision(Vector3 targetPos)
     {
-        if (Physics2D.OverlapCircle(targetPos, 0.1f, solids) != null)
+        if (Physics2D.OverlapCircle(targetPos, 0.3f, solids) != null)
         {
             return false;
         }
