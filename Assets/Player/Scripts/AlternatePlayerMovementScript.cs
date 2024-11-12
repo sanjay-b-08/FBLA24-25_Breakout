@@ -12,6 +12,8 @@ public class AlternatePlayerMovementScript : MonoBehaviour
     public float moveSpeed = 5f;
 
     public Animator anim;
+
+    public LayerMask solids;
     void Start()
     {
         
@@ -28,10 +30,13 @@ public class AlternatePlayerMovementScript : MonoBehaviour
             if (input != Vector2.zero)
             {
                 var tarPos = transform.position;
-                tarPos.x += input.x;
-                tarPos.y += input.y;
+                tarPos.x += input.x/2;
+                tarPos.y += input.y/2;
 
-                StartCoroutine(Move(tarPos));
+                if (noCollision(tarPos))
+                {
+                    StartCoroutine(Move(tarPos));
+                }
             }
         }
 
@@ -55,5 +60,14 @@ public class AlternatePlayerMovementScript : MonoBehaviour
         transform.position = tarPos;
 
         moving = false;
+    }
+
+    private bool noCollision(Vector3 targetPos)
+    {
+        if (Physics2D.OverlapCircle(targetPos, 0.1f, solids) != null)
+        {
+            return false;
+        }
+        return true;
     }
 }
