@@ -7,7 +7,7 @@ using UnityEngine.Windows;
 public class AlternatePlayerMovementScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    private Boolean moving;
+    private bool moving;
     private Vector2 input;
     public float moveSpeed = 5f;
 
@@ -22,6 +22,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (!moving)
         {
             input.x = UnityEngine.Input.GetAxisRaw("Horizontal");
@@ -29,7 +30,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
 
             if (input != Vector2.zero)
             {
-                var tarPos = transform.position;
+                Vector2 tarPos = transform.position;
                 tarPos.x += input.x/2;
                 tarPos.y += input.y/2;
 
@@ -39,6 +40,8 @@ public class AlternatePlayerMovementScript : MonoBehaviour
                 }
             }
         }
+
+
 
         if (input.x != 0)
         {
@@ -62,10 +65,11 @@ public class AlternatePlayerMovementScript : MonoBehaviour
         moving = false;
     }
 
-    private bool noCollision(Vector3 targetPos)
+    private bool noCollision(Vector2 targetPos)
     {
         if (Physics2D.OverlapCircle(targetPos, 0.3f, solids) != null)
         {
+            //Debug.Log("Collision Detected");
             return false;
         }
         return true;
