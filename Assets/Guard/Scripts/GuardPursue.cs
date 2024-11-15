@@ -7,10 +7,10 @@ public class GuardPursue : MonoBehaviour
 {
     public float moveSpeed;
     public Transform player;
+    public float catchRange = 1f;
 
     private float distance;
 
-    public LayerMask solids;
     public LayerMask playerMask;
     // Start is called before the first frame update
     void Start()
@@ -27,5 +27,30 @@ public class GuardPursue : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
         }
+
+        if (caught(transform.position))
+        {
+            Debug.Log("Player Caught!");
+            //GameOver();
+        }
+    }
+
+    private bool caught(Vector2 targetPos)
+    {
+        if (Physics2D.OverlapCircle(targetPos, catchRange, playerMask) != null)
+        {
+            //Debug.Log("Player Caught!");
+            return true;
+        }
+        return false;
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, 4);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, catchRange);
     }
 }
