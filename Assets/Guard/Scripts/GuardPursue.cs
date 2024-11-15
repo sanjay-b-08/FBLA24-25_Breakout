@@ -45,9 +45,10 @@ public class GuardPursue : MonoBehaviour
         return false;
     }
 
+
+
     void OnDrawGizmosSelected()
     {
-        // Draw a yellow sphere at the transform's position
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, 4);
         Gizmos.color = Color.red;
