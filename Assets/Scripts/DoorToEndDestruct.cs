@@ -15,6 +15,8 @@ public class DoorToEndDestruct : MonoBehaviour
     public Button playAgainButton;
     public TextMeshProUGUI playAgainText;
 
+    public Timer timer;
+
     public void endDestruct()
     {
         doorToEnd.GetComponent<TilemapRenderer>().enabled = false;
@@ -23,6 +25,8 @@ public class DoorToEndDestruct : MonoBehaviour
         doorToEnd.GetComponent<BoxCollider2D>().enabled = false;
 
         GameOver();
+
+        congratsText.SetText("Congrats! You escaped in: " + timer.timeRemaining);
 
     }
     void GameOver()
