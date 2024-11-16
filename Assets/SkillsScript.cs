@@ -15,16 +15,18 @@ public class SkillsScript : MonoBehaviour
     private int bribeMoney;
     public TextMeshProUGUI bribeMoneyText;
     public int bribeCost;
+    public float bribeCooldown;
 
 
     //KILL
+    public TextMeshProUGUI killCountText;
     public int killCount;
-
 
     void Start()
     {
         bribeMoney = 0;
 
+        //GuardPursue gp = new GuardPursue();
     }
 
     // Update is called once per frame
@@ -33,8 +35,10 @@ public class SkillsScript : MonoBehaviour
 
         collectCoin(transform.position);
         kill(getClosestEnemyInRange());
+        bribe(getClosestEnemyInRange());
 
         bribeMoneyText.SetText("Bribe Money: " + bribeMoney);
+        killCountText.SetText("Kill Count: " + killCount);
     }
 
     private void collectCoin(Vector2 targetPos)
@@ -63,6 +67,7 @@ public class SkillsScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
+                GuardPursue.moveSpeed += 0.5f;
                 Destroy(g.gameObject);
                 killCount++;
             }
@@ -76,7 +81,7 @@ public class SkillsScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Z) && bribeMoney > bribeCost)
             {
                 ///DO SOMETHING HERE FOR BRIBE
-                Debug.Log("Guard Bribed");
+                StartCoroutine(pause(g));
                 bribeMoney -= bribeCost;
             }
         }
@@ -102,6 +107,15 @@ public class SkillsScript : MonoBehaviour
             return closestGuard;
         }
         return null;
+    }
+
+    IEnumerator pause(GameObject g)
+    {
+        g.gameObject.GetComponent<GuardPursue>().movable = false;
+        yield return new WaitForSeconds(5f);
+        g.gameObject.GetComponent<GuardPursue>().movable = true;
+
+        yield return new WaitForSeconds(bribeCooldown);
     }
 
 
