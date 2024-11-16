@@ -87,6 +87,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
         return true;
     }
 
+    //PLACEHOLDER FOR FUTURE
     private void cafDoorDestruct(Vector2 targetPos)
     {
         if (Physics2D.OverlapCircle(targetPos, 1f, cafDoor) != null)
@@ -95,12 +96,19 @@ public class AlternatePlayerMovementScript : MonoBehaviour
         }
     }
 
+    //PLACEHOLDER FOR FUTURE
     private void recDoorDestruct(Vector2 targetPos)
     {
         if (Physics2D.OverlapCircle(targetPos, 1f, recDoor) != null)
         {
             rtc.recDestruct();
         }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, 1);
     }
 
 }
