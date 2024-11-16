@@ -464,7 +464,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -474,6 +473,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &139928498
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -667,7 +667,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -677,6 +676,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &191762410
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -836,7 +836,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -846,6 +845,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &208562747
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1454,7 +1454,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -1464,6 +1463,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &241181878
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1561,7 +1561,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -1571,6 +1570,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &261272953
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1818,7 +1818,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -1828,6 +1827,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &358988726
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1925,7 +1925,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -1935,6 +1934,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &375593463
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2218,7 +2218,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -2228,6 +2227,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &484348757
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2456,7 +2456,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.16173907, y: 2.9922078, z: -9.976435}
+  m_LocalPosition: {x: -0.16069852, y: 2.9922078, z: -9.976435}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2616,7 +2616,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -2626,6 +2625,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &551594262
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2723,7 +2723,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -2733,6 +2732,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &569791334
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2830,7 +2830,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -2840,6 +2839,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &606003292
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2937,7 +2937,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -2947,6 +2946,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &733096322
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3376,7 +3376,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -3386,6 +3385,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &847308301
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3483,7 +3483,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -3493,6 +3492,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &862880285
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33625,7 +33625,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -33635,6 +33634,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &991304593
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33879,6 +33879,140 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5096073010830125127, guid: 968947bb92cc51b42834111240543bea, type: 3}
   m_PrefabInstance: {fileID: 1044515585}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1047139189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1047139190}
+  - component: {fileID: 1047139192}
+  - component: {fileID: 1047139191}
+  m_Layer: 5
+  m_Name: KillCountText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1047139190
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047139189}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1117750856}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 81, y: -96}
+  m_SizeDelta: {x: 241.892, y: 36.465}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &1047139191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047139189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Kill Count: 0'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4279838874
+  m_fontColor: {r: 0.6037736, g: 0.1554872, b: 0.09910998, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 29.8
+  m_fontSizeBase: 29.8
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 3
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: -181.90736, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1047139192
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047139189}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1054077556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34037,6 +34171,8 @@ RectTransform:
   m_Children:
   - {fileID: 122092871}
   - {fileID: 1140501210}
+  - {fileID: 1047139190}
+  - {fileID: 1975059216}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -34089,7 +34225,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -34099,6 +34234,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1119658824
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34185,7 +34321,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 31, y: -15.599976}
+  m_AnchoredPosition: {x: 81, y: -52}
   m_SizeDelta: {x: 241.892, y: 36.465}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1140501211
@@ -34330,7 +34466,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -34340,6 +34475,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1143541132
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34437,7 +34573,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -34447,6 +34582,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1166218153
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34606,7 +34742,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -34616,6 +34751,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1212996694
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34775,7 +34911,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -34785,6 +34920,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1218876573
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35006,7 +35142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -35016,6 +35151,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1296767905
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -97636,7 +97772,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -97646,6 +97781,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1508180599
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -98025,7 +98161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -98035,6 +98170,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1595946856
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -98132,7 +98268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -98142,6 +98277,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1623279719
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -98239,7 +98375,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -98249,6 +98384,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1629149306
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -98470,7 +98606,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -98480,6 +98615,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1715575225
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -98611,7 +98747,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -98621,6 +98756,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1724674609
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -98893,7 +99029,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -98903,6 +99038,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1793396387
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -99508,7 +99644,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -99518,6 +99653,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1861777154
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -99615,7 +99751,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -99625,6 +99760,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1863040374
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -99831,7 +99967,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -99841,6 +99976,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1938346340
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -100015,7 +100151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -100025,6 +100160,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1968309499
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -100077,6 +100213,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1975059215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1975059216}
+  m_Layer: 5
+  m_Name: PauseMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1975059216
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975059215}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1117750856}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1984955322
 GameObject:
   m_ObjectHideFlags: 0
@@ -100122,7 +100293,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -100132,6 +100302,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1984955325
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -101063,9 +101234,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   bribeMoneyText: {fileID: 1140501211}
-  bribeCost: 1
+  bribeCost: 15
+  bribeCooldown: 5
+  killCountText: {fileID: 1047139191}
   killCount: 0
-  gp: {fileID: 1938346339}
 --- !u!1001 &2116960765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101173,7 +101345,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -101183,6 +101354,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &2129279741
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -101280,7 +101452,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eeadf2c2b9ef14b8aef25e92113f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   player: {fileID: 2084290307}
   catchRange: 0.49
   playerMask:
@@ -101290,6 +101461,7 @@ MonoBehaviour:
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &2137489292
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ using UnityEngine.Windows;
 
 public class GuardPursue : MonoBehaviour
 {
-    public float moveSpeed;
+    public static float moveSpeed;
     public Transform player;
     public float catchRange = 1f;
 
@@ -31,6 +31,8 @@ public class GuardPursue : MonoBehaviour
     {
         isGameOver = false;
         movable = true;
+
+        moveSpeed = 3f;
     }
 
     // Update is called once per frame
