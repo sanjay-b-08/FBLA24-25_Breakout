@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using UnityEngine.Windows;
 
 public class AlternatePlayerMovementScript : MonoBehaviour
@@ -14,14 +15,25 @@ public class AlternatePlayerMovementScript : MonoBehaviour
     public Animator anim;
 
     public LayerMask solids;
+    public LayerMask cafDoor;
+    public LayerMask recDoor;
+
+    public Tilemap doorToCaf;
+    private DoorToCafDestruct dtc;
+
+    public Tilemap doorToRec;
+    private DoorToRecDestruct rtc;
     void Start()
     {
-        
+        dtc = doorToCaf.GetComponent<DoorToCafDestruct>();
+        rtc = doorToRec.GetComponent<DoorToRecDestruct>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        cafDoorDestruct(transform.position);
+        recDoorDestruct(transform.position);
 
         if (!moving)
         {
@@ -74,4 +86,21 @@ public class AlternatePlayerMovementScript : MonoBehaviour
         }
         return true;
     }
+
+    private void cafDoorDestruct(Vector2 targetPos)
+    {
+        if (Physics2D.OverlapCircle(targetPos, 1f, cafDoor) != null)
+        {
+            dtc.cafDestruct();
+        }
+    }
+
+    private void recDoorDestruct(Vector2 targetPos)
+    {
+        if (Physics2D.OverlapCircle(targetPos, 1f, recDoor) != null)
+        {
+            rtc.recDestruct();
+        }
+    }
+
 }
