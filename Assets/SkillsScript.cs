@@ -67,7 +67,7 @@ public class SkillsScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
-                GuardPursue.moveSpeed += 0.5f;
+                GuardPursue.moveSpeed += 0.1f;
                 Destroy(g.gameObject);
                 killCount++;
             }
