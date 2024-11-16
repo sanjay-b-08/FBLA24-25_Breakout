@@ -33689,7 +33689,7 @@ MonoBehaviour:
     m_Bits: 512
   solids:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
@@ -34157,7 +34157,7 @@ MonoBehaviour:
     m_Bits: 512
   solids:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
@@ -34402,7 +34402,7 @@ MonoBehaviour:
     m_Bits: 512
   solids:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
@@ -100147,7 +100147,7 @@ MonoBehaviour:
     m_Bits: 512
   solids:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
@@ -101312,7 +101312,7 @@ MonoBehaviour:
     m_Bits: 512
   solids:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
