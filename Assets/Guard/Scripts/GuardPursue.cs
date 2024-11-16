@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.Windows;
 
@@ -21,32 +22,41 @@ public class GuardPursue : MonoBehaviour
     public Button tryAgainButton;
     public TextMeshProUGUI tryAgainText;
 
+    public bool movable;
+
+    private bool isGameOver;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        isGameOver = false;
+        movable = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isGameOver)
+        {
+            Time.timeScale = 0.05f;
+            GameOver();
+        }
+
         distance = Vector2.Distance(transform.position, player.transform.position);
 
-        if (distance < 4)
+        if (distance < 4 && movable)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
         }
 
         if (caught(transform.position))
         {
-            Time.timeScale = 0.2f;
-            GameOver();
+            isGameOver = true;
         }
     }
 
     private void GameOver()
     {
-        //Red screen comes into view
         if (caughtScreen.color.a < 1)
         {
             var colorAlpha = caughtScreen.color;
@@ -86,6 +96,12 @@ public class GuardPursue : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void increaseGuardSpeed(float add)
+    {
+        moveSpeed += add;
+        Debug.Log("Speed increased");
     }
 
 

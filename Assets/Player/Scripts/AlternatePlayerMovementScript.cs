@@ -17,16 +17,21 @@ public class AlternatePlayerMovementScript : MonoBehaviour
     public LayerMask solids;
     public LayerMask cafDoor;
     public LayerMask recDoor;
+    public LayerMask endDoor;
 
     public Tilemap doorToCaf;
     private DoorToCafDestruct dtc;
 
     public Tilemap doorToRec;
     private DoorToRecDestruct rtc;
+
+    public Tilemap doorToEnd;
+    private DoorToEndDestruct dte;
     void Start()
     {
         dtc = doorToCaf.GetComponent<DoorToCafDestruct>();
         rtc = doorToRec.GetComponent<DoorToRecDestruct>();
+        dte = doorToEnd.GetComponent<DoorToEndDestruct>();
     }
 
     // Update is called once per frame
@@ -34,6 +39,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
     {
         cafDoorDestruct(transform.position);
         recDoorDestruct(transform.position);
+        endDoorDestruct(transform.position);
 
         if (!moving)
         {
@@ -77,6 +83,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
         moving = false;
     }
 
+    //For collisions
     private bool noCollision(Vector2 targetPos)
     {
         if (Physics2D.OverlapCircle(targetPos, 0.3f, solids) != null)
@@ -100,6 +107,14 @@ public class AlternatePlayerMovementScript : MonoBehaviour
         if (Physics2D.OverlapCircle(targetPos, 1f, recDoor) != null)
         {
             rtc.recDestruct();
+        }
+    }
+
+    private void endDoorDestruct(Vector2 targetPos)
+    {
+        if (Physics2D.OverlapCircle(targetPos, 1f, endDoor) != null)
+        {
+            dte.endDestruct();
         }
     }
 
