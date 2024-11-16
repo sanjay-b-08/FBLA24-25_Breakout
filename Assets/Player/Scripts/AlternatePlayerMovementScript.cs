@@ -88,7 +88,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
     {
         if (Physics2D.OverlapCircle(targetPos, 0.3f, solids) != null)
         {
-            // Debug.Log("Collision Detected");
+            //Debug.Log("Collision Detected");
             return false;
         }
         return true;
