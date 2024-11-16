@@ -470,10 +470,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &139928498
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -673,10 +677,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &191762410
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -842,10 +850,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &208562747
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1460,10 +1472,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &241181878
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1567,10 +1583,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &261272953
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1824,10 +1844,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &358988726
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1931,10 +1955,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &375593463
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2224,10 +2252,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &484348757
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2456,7 +2488,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.16173907, y: 2.9922078, z: -9.976435}
+  m_LocalPosition: {x: -0.16178265, y: 2.9922078, z: -9.976435}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2622,10 +2654,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &551594262
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2729,10 +2765,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &569791334
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2836,10 +2876,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &606003292
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2943,10 +2987,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &733096322
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3382,10 +3430,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &847308301
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3489,10 +3541,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &862880285
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33631,10 +33687,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 0
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &991304593
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34095,10 +34155,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 0
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1119658824
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34336,10 +34400,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 0
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1143541132
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34443,10 +34511,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1166218153
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34612,10 +34684,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1212996694
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34781,10 +34857,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1218876573
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35012,10 +35092,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1296767905
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -97642,10 +97726,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1508180599
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -98031,10 +98119,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1595946856
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -98138,10 +98230,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1623279719
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -98245,10 +98341,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1629149306
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -98476,10 +98576,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1715575225
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -98617,10 +98721,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1724674609
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -98899,10 +99007,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1793396387
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -99514,10 +99626,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1861777154
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -99621,10 +99737,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1863040374
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -99837,10 +99957,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1938346340
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -100021,10 +100145,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 0
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1968309499
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -100128,10 +100256,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &1984955325
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -101065,7 +101197,6 @@ MonoBehaviour:
   bribeMoneyText: {fileID: 1140501211}
   bribeCost: 1
   killCount: 0
-  gp: {fileID: 1938346339}
 --- !u!1001 &2116960765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101179,10 +101310,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 0
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &2129279741
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -101286,10 +101421,14 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 512
+  solids:
+    serializedVersion: 2
+    m_Bits: 128
   caughtScreen: {fileID: 1874438633}
   caughtText: {fileID: 2014549611}
   tryAgainButton: {fileID: 776781867}
   tryAgainText: {fileID: 63045586}
+  movable: 0
 --- !u!212 &2137489292
 SpriteRenderer:
   m_ObjectHideFlags: 0

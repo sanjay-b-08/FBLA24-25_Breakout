@@ -6,16 +6,18 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.Windows;
+using UnityEngine.Tilemaps;
 
 public class GuardPursue : MonoBehaviour
 {
     public float moveSpeed;
     public Transform player;
-    public float catchRange = 1f;
+    public float catchRange = 0.5f;
 
     private float distance;
 
     public LayerMask playerMask;
+    public LayerMask solids;
 
     public Image caughtScreen;
     public TextMeshProUGUI caughtText;
@@ -44,9 +46,14 @@ public class GuardPursue : MonoBehaviour
 
         distance = Vector2.Distance(transform.position, player.transform.position);
 
+
         if (distance < 4 && movable)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+            Vector2 pos = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+            if(noCollision(pos))
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+            }
         }
 
         if (caught(transform.position))
@@ -54,6 +61,17 @@ public class GuardPursue : MonoBehaviour
             isGameOver = true;
         }
     }
+
+    private bool noCollision(Vector2 targetPos)
+    {
+        if (Physics2D.OverlapCircle(targetPos, 0.3f, solids) != null)
+        {
+            Debug.Log("Collision Detected");
+            return false;
+        }
+        return true;
+    }
+
 
     private void GameOver()
     {
