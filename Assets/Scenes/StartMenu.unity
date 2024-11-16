@@ -366,7 +366,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 450.12, y: -87}
+  m_AnchoredPosition: {x: 450.12, y: -17}
   m_SizeDelta: {x: 1019.753, y: 717.384}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &334181319
@@ -389,9 +389,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "- You are in a high security prison for a crime you didn't commit. \n\n-
-    Escape. \n\n- Remember: sometimes your human morals give you a better chance
-    of escape. Sometimes they do not.\n\n- Get out as fast as possible."
+  m_text: "- You are in a high security prison for a crime you didn't commit; Escape.
+    \n\n- Remember: sometimes your human morals give you a better chance of escape.
+    Sometimes they do not.\n\n- Get out as fast as possible."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -682,7 +682,7 @@ RectTransform:
   m_GameObject: {fileID: 467729231}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.73484, y: 0.73484, z: 0.73484}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1779811179}
@@ -690,7 +690,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -213.56}
+  m_AnchoredPosition: {x: 0, y: -231}
   m_SizeDelta: {x: 419.243, y: 182.789}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &467729233
@@ -815,7 +815,7 @@ RectTransform:
   m_GameObject: {fileID: 799941287}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.73484, y: 0.73484, z: 0.73484}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1254816817}
@@ -823,7 +823,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12.813, y: 217.76}
+  m_AnchoredPosition: {x: -3, y: 87}
   m_SizeDelta: {x: 444.869, y: 191.182}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &799941289
@@ -954,7 +954,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -499, y: 0.000011444}
+  m_AnchoredPosition: {x: -499, y: -24}
   m_SizeDelta: {x: 611.275, y: 408.679}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1075354558
@@ -977,17 +977,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Movement: Arrow Keys
+  m_text: 'Movement: Arrow Keys / WASD
 
 
     Interact: Spacebar
 
 
-    Kill: "X"
+    Bribe: "Z"
 
 
-    Pickpocket:
-    "C"'
+    Kill:
+    "X"
+
+
+    Pickpocket: "C"'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1092,7 +1095,7 @@ RectTransform:
   m_GameObject: {fileID: 1139235666}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.38126, y: 0.38126, z: 0.38126}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1936426152}
@@ -1100,7 +1103,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -499, y: -391}
+  m_AnchoredPosition: {x: -766, y: -337}
   m_SizeDelta: {x: 542.346, y: 244.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1139235668
@@ -1377,7 +1380,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000076293945, y: 472}
+  m_AnchoredPosition: {x: -0.000076293945, y: 315}
   m_SizeDelta: {x: 1037.205, y: 260.924}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1369435495
@@ -1731,7 +1734,7 @@ RectTransform:
   m_GameObject: {fileID: 1622143792}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.73484, y: 0.73484, z: 0.73484}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 342771475}
@@ -1739,7 +1742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000083923, y: 0}
+  m_AnchoredPosition: {x: -0.000083923, y: -71.99999}
   m_SizeDelta: {x: 694.86, y: 244.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1622143794
@@ -2325,7 +2328,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0065155, y: 0.0054932}
+  m_AnchoredPosition: {x: -24, y: -38}
   m_SizeDelta: {x: 1920, y: 1095.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807

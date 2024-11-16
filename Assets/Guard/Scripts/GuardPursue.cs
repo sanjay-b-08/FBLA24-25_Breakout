@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Windows;
 
 public class GuardPursue : MonoBehaviour
@@ -12,6 +15,12 @@ public class GuardPursue : MonoBehaviour
     private float distance;
 
     public LayerMask playerMask;
+
+    public Image caughtScreen;
+    public TextMeshProUGUI caughtText;
+    public Button tryAgainButton;
+    public TextMeshProUGUI tryAgainText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,8 +39,42 @@ public class GuardPursue : MonoBehaviour
 
         if (caught(transform.position))
         {
-            Debug.Log("Player Caught!");
-            //GameOver();
+            Time.timeScale = 0.2f;
+            GameOver();
+        }
+    }
+
+    private void GameOver()
+    {
+        //Red screen comes into view
+        if (caughtScreen.color.a < 1)
+        {
+            var colorAlpha = caughtScreen.color;
+            colorAlpha.a += 0.01f;
+            caughtScreen.color = colorAlpha;
+        }
+
+        if (caughtText.color.a < 1)
+        {
+            var colorAlpha = caughtText.color;
+            colorAlpha.a += 0.005f;
+            caughtText.color = colorAlpha;
+        }
+
+        tryAgainButton.GetComponent<Button>().enabled = true;
+
+        if (tryAgainButton.GetComponent<Image>().color.a < 1)
+        {
+            var colorAlpha = tryAgainButton.GetComponent<Image>().color;
+            colorAlpha.a += 0.005f;
+            tryAgainButton.GetComponent<Image>().color = colorAlpha;
+        }
+
+        if (tryAgainText.color.a < 1)
+        {
+            var colorAlpha = tryAgainText.color;
+            colorAlpha.a += 0.005f;
+            tryAgainText.color = colorAlpha;
         }
     }
 
