@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Guard
   layers:
   - Default
   - TransparentFX
@@ -12,11 +13,11 @@ TagManager:
   - Water
   - UI
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Solids
+  - Guards
+  - Player
+  - Doors
+  - Coins
   - 
   - 
   - 
@@ -40,4 +41,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2753698365
+    locked: 0
+  - name: Player
+    uniqueID: 2268961001
+    locked: 0
+  - name: Foreground
+    uniqueID: 3070193853
+    locked: 0
+  - name: Guards
+    uniqueID: 3822653561
     locked: 0
