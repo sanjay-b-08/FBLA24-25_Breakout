@@ -7,6 +7,7 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.Windows;
 using UnityEngine.Tilemaps;
+using Unity.VisualScripting;
 
 public class GuardPursue : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class GuardPursue : MonoBehaviour
     public TextMeshProUGUI tryAgainText;
 
     public bool movable;
+    public bool canCatch;
 
     private bool isGameOver;
 
@@ -33,6 +35,7 @@ public class GuardPursue : MonoBehaviour
     {
         isGameOver = false;
         movable = true;
+        canCatch = true;
 
         moveSpeed = 3f;
     }
@@ -52,13 +55,13 @@ public class GuardPursue : MonoBehaviour
         if (distance < 4 && movable)
         {
             Vector2 pos = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
-            if(noCollision(pos))
+            if (noCollision(pos))
             {
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
             }
         }
 
-        if (caught(transform.position))
+        if (caught(transform.position) && canCatch)
         {
             isGameOver = true;
         }
@@ -68,7 +71,6 @@ public class GuardPursue : MonoBehaviour
     {
         if (Physics2D.OverlapCircle(targetPos, 0.3f, solids) != null)
         {
-            Debug.Log("Collision Detected");
             return false;
         }
         return true;
@@ -121,7 +123,6 @@ public class GuardPursue : MonoBehaviour
     public void increaseGuardSpeed(float add)
     {
         moveSpeed += add;
-        Debug.Log("Speed increased");
     }
 
 

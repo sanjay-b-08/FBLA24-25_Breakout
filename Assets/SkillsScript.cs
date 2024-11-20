@@ -21,10 +21,13 @@ public class SkillsScript : MonoBehaviour
     //KILL
     public TextMeshProUGUI killCountText;
     public int killCount;
+    public float killCooldown;
+    private bool onKillCooldown;
 
     void Start()
     {
         bribeMoney = 0;
+        onKillCooldown = false;
 
         //GuardPursue gp = new GuardPursue();
     }
@@ -63,13 +66,14 @@ public class SkillsScript : MonoBehaviour
 
     private void kill(GameObject g)
     {
-        if (g != null && Vector3.Distance(transform.position, g.transform.position) < 4f)
+        if (g != null && Vector3.Distance(transform.position, g.transform.position) < 4f && onKillCooldown == false)
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
-                GuardPursue.moveSpeed += 0.1f;
+                GuardPursue.moveSpeed += 0.25f;
                 Destroy(g.gameObject);
                 killCount++;
+                StartCoroutine(killCD(g));
             }
         }
     }
@@ -80,7 +84,6 @@ public class SkillsScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Z) && bribeMoney > bribeCost)
             {
-                ///DO SOMETHING HERE FOR BRIBE
                 StartCoroutine(pause(g));
                 bribeMoney -= bribeCost;
             }
@@ -112,10 +115,21 @@ public class SkillsScript : MonoBehaviour
     IEnumerator pause(GameObject g)
     {
         g.gameObject.GetComponent<GuardPursue>().movable = false;
-        yield return new WaitForSeconds(5f);
+        g.gameObject.GetComponent<GuardPursue>().canCatch = false;
+        //Cooldown for guard to stop moving
+        yield return new WaitForSeconds(2f);
         g.gameObject.GetComponent<GuardPursue>().movable = true;
+        g.gameObject.GetComponent<GuardPursue>().canCatch = true;
 
+        //Cooldown for the act of bribing
         yield return new WaitForSeconds(bribeCooldown);
+    }
+
+    IEnumerator killCD(GameObject g)
+    {
+        onKillCooldown = true;
+        yield return new WaitForSeconds(killCooldown);
+        onKillCooldown = false;
     }
 
 

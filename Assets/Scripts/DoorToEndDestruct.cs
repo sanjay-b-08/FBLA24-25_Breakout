@@ -9,14 +9,6 @@ public class DoorToEndDestruct : MonoBehaviour
 {
     // Start is called before the first frame update
     public Tilemap doorToEnd;
-
-    public Image congratsScreen;
-    public TextMeshProUGUI congratsText;
-    public Button playAgainButton;
-    public TextMeshProUGUI playAgainText;
-
-    public Timer timer;
-
     public void endDestruct()
     {
         doorToEnd.GetComponent<TilemapRenderer>().enabled = false;
@@ -24,12 +16,12 @@ public class DoorToEndDestruct : MonoBehaviour
         doorToEnd.GetComponent<CompositeCollider2D>().enabled = false;
         doorToEnd.GetComponent<BoxCollider2D>().enabled = false;
 
-        GameOver();
+        //GameOver();
 
-        congratsText.SetText("Congrats! You escaped in: " + timer.timeRemaining);
+        //congratsText.SetText("Congrats! You escaped in: " + timer.timeRemaining);
 
     }
-    void GameOver()
+    /*void GameOver()
     {
         if (congratsScreen.color.a < 1)
         {
@@ -60,6 +52,6 @@ public class DoorToEndDestruct : MonoBehaviour
             colorAlpha.a += 0.005f;
             playAgainText.color = colorAlpha;
         }
-    }
+    }*/
 
 }
