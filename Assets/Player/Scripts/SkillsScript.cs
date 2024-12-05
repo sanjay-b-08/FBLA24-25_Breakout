@@ -24,6 +24,9 @@ public class SkillsScript : MonoBehaviour
     public float killCooldown;
     private bool onKillCooldown;
 
+    public LayerMask foreGround;
+    public float maxRayDistance = 10f;
+
     void Start()
     {
         bribeMoney = 0;
@@ -67,11 +70,14 @@ public class SkillsScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
-                GuardPursue.moveSpeed += 0.25f;
-                //transform.position = g.transform.position;
-                Destroy(g.gameObject);
-                killCount++;
-                StartCoroutine(killCD());
+                if (isKilllable(g))
+                {
+                    GuardPursue.moveSpeed += 0.25f;
+                    //transform.position = g.transform.position;
+                    Destroy(g.gameObject);
+                    killCount++;
+                    StartCoroutine(killCD());
+                }
             }
         }
     }
@@ -128,6 +134,31 @@ public class SkillsScript : MonoBehaviour
         onKillCooldown = true;
         yield return new WaitForSeconds(killCooldown);
         onKillCooldown = false;
+    }
+
+    private bool isKilllable(GameObject g)
+    {
+        Vector2 direction = (g.transform.position - transform.position).normalized;
+        float distance = Vector2.Distance(transform.position, g.transform.position);
+
+        //Debug.DrawRay(transform.position, direction * Mathf.Min(distance, maxRayDistance), Color.red);
+
+        RaycastHit2D hit = Physics2D.Raycast(
+            transform.position,  // Starting point
+            direction,  // Direction
+            Mathf.Min(distance, maxRayDistance),  // Maximum distance
+            foreGround  // Optional layer mask
+        );
+
+        if (hit.collider == null)
+        {
+            return true;
+        }
+        else
+        {
+            Debug.Log("Obstacle in between");
+            return false;
+        }
     }
 
 

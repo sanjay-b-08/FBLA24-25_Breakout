@@ -102613,6 +102613,10 @@ MonoBehaviour:
   killCountText: {fileID: 1247081702}
   killCount: 0
   killCooldown: 10
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
+  maxRayDistance: 10
 --- !u!81 &2084290311
 AudioListener:
   m_ObjectHideFlags: 0
