@@ -38,6 +38,7 @@ public class GuardPursue : MonoBehaviour
         canCatch = true;
 
         moveSpeed = 3f;
+
     }
 
     // Update is called once per frame
@@ -47,6 +48,7 @@ public class GuardPursue : MonoBehaviour
         {
             Time.timeScale = 0.05f;
             GameOver();
+
         }
 
         distance = Vector2.Distance(transform.position, player.transform.position);
@@ -125,7 +127,10 @@ public class GuardPursue : MonoBehaviour
         moveSpeed += add;
     }
 
-
+    public bool getIsGameOver()
+    {
+        return isGameOver;
+    }
 
     void OnDrawGizmosSelected()
     {
