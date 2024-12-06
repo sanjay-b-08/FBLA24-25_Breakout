@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SkillsScript : MonoBehaviour
 {
@@ -24,13 +25,20 @@ public class SkillsScript : MonoBehaviour
     public float killCooldown;
     private bool onKillCooldown;
 
+    private Color killColorAlpha;
+
+    public Image killFillCirc;
+    public TextMeshProUGUI killText;
+
     public LayerMask foreGround;
-    public float maxRayDistance = 10f;
+    private float maxRayDistance = 4f;
 
     void Start()
     {
         bribeMoney = 0;
         onKillCooldown = false;
+
+        killColorAlpha = killFillCirc.color;
 
         //GuardPursue gp = new GuardPursue();
     }
@@ -38,6 +46,7 @@ public class SkillsScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        killFillCirc.color = killColorAlpha;
 
         collectCoin(transform.position);
         kill(getClosestEnemyInRange());
@@ -45,6 +54,11 @@ public class SkillsScript : MonoBehaviour
 
         bribeMoneyText.SetText("Bribe Money: " + bribeMoney);
         killCountText.SetText("Kill Count: " + killCount);
+
+        if (killFillCirc.fillAmount < 8)
+        {
+            killFillCirc.fillAmount += 0.00074f;
+        }
     }
 
     private void collectCoin(Vector2 targetPos)
@@ -68,9 +82,10 @@ public class SkillsScript : MonoBehaviour
     {
         if (g != null && Vector3.Distance(transform.position, g.transform.position) < 4f && onKillCooldown == false)
         {
-            if (Input.GetKeyDown(KeyCode.X))
-            {
-                if (isKilllable(g))
+            if (isKilllable(g)) {
+                killColorAlpha.a = 1f;
+
+                if (Input.GetKeyDown(KeyCode.X))
                 {
                     GuardPursue.moveSpeed += 0.25f;
                     //transform.position = g.transform.position;
@@ -79,6 +94,9 @@ public class SkillsScript : MonoBehaviour
                     StartCoroutine(killCD());
                 }
             }
+        } else
+        {
+            killColorAlpha.a = 0.5f;
         }
     }
 
@@ -132,10 +150,14 @@ public class SkillsScript : MonoBehaviour
     IEnumerator killCD()
     {
         onKillCooldown = true;
+        killFillCirc.fillAmount = 0;
+        killText.alpha = 0.2f;
         yield return new WaitForSeconds(killCooldown);
+        killText.alpha = 1;
         onKillCooldown = false;
     }
 
+    //Checks to see if there is an obstacle in between player and officer -> if yes -> can't kill
     private bool isKilllable(GameObject g)
     {
         Vector2 direction = (g.transform.position - transform.position).normalized;
@@ -156,7 +178,7 @@ public class SkillsScript : MonoBehaviour
         }
         else
         {
-            Debug.Log("Obstacle in between");
+            //Debug.Log("Obstacle in between");
             return false;
         }
     }
