@@ -18,6 +18,10 @@ public class SkillsScript : MonoBehaviour
     public int bribeCost;
     public float bribeCooldown;
 
+    public Image bribeImage;
+    public TextMeshProUGUI bribeText;
+    private Color bribeImageAlpha;
+
 
     //KILL
     public TextMeshProUGUI killCountText;
@@ -26,7 +30,6 @@ public class SkillsScript : MonoBehaviour
     private bool onKillCooldown;
 
     private Color killColorAlpha;
-
     public Image killFillCirc;
     public TextMeshProUGUI killText;
 
@@ -39,6 +42,7 @@ public class SkillsScript : MonoBehaviour
         onKillCooldown = false;
 
         killColorAlpha = killFillCirc.color;
+        bribeImageAlpha = bribeImage.color;
 
         //GuardPursue gp = new GuardPursue();
     }
@@ -47,6 +51,7 @@ public class SkillsScript : MonoBehaviour
     void Update()
     {
         killFillCirc.color = killColorAlpha;
+        bribeImage.color = bribeImageAlpha;
 
         collectCoin(transform.position);
         kill(getClosestEnemyInRange());
@@ -57,7 +62,15 @@ public class SkillsScript : MonoBehaviour
 
         if (killFillCirc.fillAmount < 8)
         {
-            killFillCirc.fillAmount += 0.00074f;
+            killFillCirc.fillAmount += 0.00064f;
+        }
+
+        if (bribeMoney >= bribeCost)
+        {
+            bribeText.alpha = 1f;
+        } else
+        {
+            bribeText.alpha = 0.4f;
         }
     }
 
@@ -82,21 +95,22 @@ public class SkillsScript : MonoBehaviour
     {
         if (g != null && Vector3.Distance(transform.position, g.transform.position) < 4f && onKillCooldown == false)
         {
-            if (isKilllable(g)) {
+            if (canUseSkill(g)) {
                 killColorAlpha.a = 1f;
 
                 if (Input.GetKeyDown(KeyCode.X))
                 {
                     GuardPursue.moveSpeed += 0.25f;
-                    //transform.position = g.transform.position;
                     Destroy(g.gameObject);
                     killCount++;
                     StartCoroutine(killCD());
                 }
+            } else {
+                killColorAlpha.a = 0.4f;
             }
         } else
         {
-            killColorAlpha.a = 0.5f;
+            killColorAlpha.a = 0.4f;
         }
     }
 
@@ -104,11 +118,30 @@ public class SkillsScript : MonoBehaviour
     {
         if (g != null && Vector3.Distance(transform.position, g.transform.position) < 4f)
         {
-            if (Input.GetKeyDown(KeyCode.Z) && bribeMoney > bribeCost)
+            /*if (bribeMoney >= bribeCost)
             {
-                StartCoroutine(pause(g));
-                bribeMoney -= bribeCost;
+                bribeImageAlpha.a = 1f;
+            } */
+
+            if (canUseSkill(g))
+            {
+                if (bribeMoney >= bribeCost)
+                {
+                    bribeImageAlpha.a = 1f;
+
+                    if (Input.GetKeyDown(KeyCode.Z))
+                    {
+                        StartCoroutine(pause(g));
+                        bribeMoney -= bribeCost;
+
+                        bribeImageAlpha.a = 0.4f;
+                    }
+                }
+            } else {
+                bribeImageAlpha.a = 0.4f;
             }
+        } else { 
+           bribeImageAlpha.a = 0.4f;
         }
     }
 
@@ -139,7 +172,7 @@ public class SkillsScript : MonoBehaviour
         g.gameObject.GetComponent<GuardPursue>().movable = false;
         g.gameObject.GetComponent<GuardPursue>().canCatch = false;
         //Cooldown for guard to stop moving
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(5f);
         g.gameObject.GetComponent<GuardPursue>().movable = true;
         g.gameObject.GetComponent<GuardPursue>().canCatch = true;
 
@@ -157,8 +190,8 @@ public class SkillsScript : MonoBehaviour
         onKillCooldown = false;
     }
 
-    //Checks to see if there is an obstacle in between player and officer -> if yes -> can't kill
-    private bool isKilllable(GameObject g)
+    //Checks to see if there is an obstacle in between player and officer -> if yes -> can't kill or bribe
+    private bool canUseSkill(GameObject g)
     {
         Vector2 direction = (g.transform.position - transform.position).normalized;
         float distance = Vector2.Distance(transform.position, g.transform.position);
