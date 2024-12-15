@@ -76,10 +76,10 @@ public class SkillsScript : MonoBehaviour
 
     private void collectCoin(Vector2 targetPos)
     {
-        if (Physics2D.OverlapCircle(targetPos, 0.5f, coins) != null)
+        if (Physics2D.OverlapCircle(targetPos, 0.7f, coins) != null)
         {
 
-            Collider2D collider = Physics2D.OverlapCircle(targetPos, 0.5f, coins);
+            Collider2D collider = Physics2D.OverlapCircle(targetPos, 0.7f, coins);
 
             SpriteRenderer sr = collider.GetComponent<SpriteRenderer>();
 
@@ -100,7 +100,7 @@ public class SkillsScript : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.X))
                 {
-                    GuardPursue.moveSpeed += 0.25f;
+                    GuardPursue.moveSpeed += 0.32f;
                     Destroy(g.gameObject);
                     killCount++;
                     StartCoroutine(killCD());
@@ -215,6 +215,4 @@ public class SkillsScript : MonoBehaviour
             return false;
         }
     }
-
-
 }

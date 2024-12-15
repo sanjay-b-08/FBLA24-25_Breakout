@@ -8,6 +8,7 @@ using UnityEngine.UI;
 using UnityEngine.Windows;
 using UnityEngine.Tilemaps;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class GuardPursue : MonoBehaviour
 {
@@ -20,15 +21,13 @@ public class GuardPursue : MonoBehaviour
     public LayerMask playerMask;
     public LayerMask solids;
 
-    public Image caughtScreen;
-    public TextMeshProUGUI caughtText;
-    public Button tryAgainButton;
-    public TextMeshProUGUI tryAgainText;
-
     public bool movable;
     public bool canCatch;
 
     private bool isGameOver;
+
+    public Animator gameOverAnim;
+    private string currentSceneName;
 
     // Start is called before the first frame update
     void Start()
@@ -37,24 +36,36 @@ public class GuardPursue : MonoBehaviour
         movable = true;
         canCatch = true;
 
+        //tryAgainButton.GetComponent<Button>().enabled = false;
+
         moveSpeed = 3f;
+
+        //gameOverAnim = GetComponent<Animator>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (isGameOver)
         {
             Time.timeScale = 0.05f;
             GameOver();
+
+            if (UnityEngine.Input.GetKeyDown(KeyCode.Q))
+            {
+                currentSceneName = SceneManager.GetActiveScene().name;
+                Time.timeScale = 1.0f;
+                SceneManager.LoadScene(currentSceneName);
+            }
 
         }
 
         distance = Vector2.Distance(transform.position, player.transform.position);
 
 
-        if (distance < 4 && movable)
+        if (distance < 4f && movable)
         {
             Vector2 pos = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
             if (noCollision(pos))
@@ -81,35 +92,7 @@ public class GuardPursue : MonoBehaviour
 
     private void GameOver()
     {
-        if (caughtScreen.color.a < 1)
-        {
-            var colorAlpha = caughtScreen.color;
-            colorAlpha.a += 0.01f;
-            caughtScreen.color = colorAlpha;
-        }
-
-        if (caughtText.color.a < 1)
-        {
-            var colorAlpha = caughtText.color;
-            colorAlpha.a += 0.005f;
-            caughtText.color = colorAlpha;
-        }
-
-        tryAgainButton.GetComponent<Button>().enabled = true;
-
-        if (tryAgainButton.GetComponent<Image>().color.a < 1)
-        {
-            var colorAlpha = tryAgainButton.GetComponent<Image>().color;
-            colorAlpha.a += 0.005f;
-            tryAgainButton.GetComponent<Image>().color = colorAlpha;
-        }
-
-        if (tryAgainText.color.a < 1)
-        {
-            var colorAlpha = tryAgainText.color;
-            colorAlpha.a += 0.005f;
-            tryAgainText.color = colorAlpha;
-        }
+        gameOverAnim.SetBool("isGameOver", true);
     }
 
     private bool caught(Vector2 targetPos)

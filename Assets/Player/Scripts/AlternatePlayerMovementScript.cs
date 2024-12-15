@@ -96,7 +96,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
 
     private void cafDoorDestruct(Vector2 targetPos)
     {
-        if (Physics2D.OverlapCircle(targetPos, 1f, cafDoor) != null)
+        if (Physics2D.OverlapCircle(targetPos, 0.4f, cafDoor) != null)
         {
             dtc.cafDestruct();
         }
@@ -104,7 +104,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
 
     private void recDoorDestruct(Vector2 targetPos)
     {
-        if (Physics2D.OverlapCircle(targetPos, 1f, recDoor) != null)
+        if (Physics2D.OverlapCircle(targetPos, 0.4f, recDoor) != null)
         {
             rtc.recDestruct();
         }
@@ -112,7 +112,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
 
     private void endDoorDestruct(Vector2 targetPos)
     {
-        if (Physics2D.OverlapCircle(targetPos, 1f, endDoor) != null)
+        if (Physics2D.OverlapCircle(targetPos, 0.4f, endDoor) != null)
         {
             dte.endDestruct();
         }

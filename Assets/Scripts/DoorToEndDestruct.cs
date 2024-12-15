@@ -4,11 +4,21 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
+using Button = UnityEngine.UI.Button;
+using Image = UnityEngine.UI.Image;
 
 public class DoorToEndDestruct : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private bool playerWin = false;
+
     public Tilemap doorToEnd;
+
+    public void Start()
+    {
+        //replayButton.GetComponent<Button>().enabled = false;
+    }
     public void endDestruct()
     {
         doorToEnd.GetComponent<TilemapRenderer>().enabled = false;
@@ -16,42 +26,19 @@ public class DoorToEndDestruct : MonoBehaviour
         doorToEnd.GetComponent<CompositeCollider2D>().enabled = false;
         doorToEnd.GetComponent<BoxCollider2D>().enabled = false;
 
-        //GameOver();
+        playerWin = true;
 
-        //congratsText.SetText("Congrats! You escaped in: " + timer.timeRemaining);
+        if (playerWin)
+        {
+            playerWins();
+            Time.timeScale = 0.05f;
+        }
 
     }
-    /*void GameOver()
+
+    private void playerWins()
     {
-        if (congratsScreen.color.a < 1)
-        {
-            var colorAlpha = congratsScreen.color;
-            colorAlpha.a += 0.01f;
-            congratsScreen.color = colorAlpha;
-        }
-
-        if (congratsText.color.a < 1)
-        {
-            var colorAlpha = congratsText.color;
-            colorAlpha.a += 0.005f;
-            congratsText.color = colorAlpha;
-        }
-
-        playAgainButton.GetComponent<Button>().enabled = true;
-
-        if (playAgainButton.GetComponent<Image>().color.a < 1)
-        {
-            var colorAlpha = playAgainButton.GetComponent<Image>().color;
-            colorAlpha.a += 0.005f;
-            playAgainButton.GetComponent<Image>().color = colorAlpha;
-        }
-
-        if (playAgainText.color.a < 1)
-        {
-            var colorAlpha = playAgainText.color;
-            colorAlpha.a += 0.005f;
-            playAgainText.color = colorAlpha;
-        }
-    }*/
+        
+    }
 
 }
