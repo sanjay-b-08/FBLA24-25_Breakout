@@ -2242,7 +2242,7 @@ MonoBehaviour:
   m_Follow: {fileID: 2084290307}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 3.67
+    OrthographicSize: 4.33
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -3072,7 +3072,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.67
+  orthographic size: 4.33
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3097,7 +3097,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.16169146, y: 3.6622076, z: -9.976435}
+  m_LocalPosition: {x: -0.1609137, y: 3.0022078, z: -9.976435}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3464,10 +3464,10 @@ RectTransform:
   - {fileID: 604812886}
   m_Father: {fileID: 1117750856}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 12, y: -16}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: -1820, y: -814}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &604812885
 GameObject:
@@ -99664,7 +99664,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Click "Q" to replay
+  m_text: 'Click "R" to Replay
+
+    Click "E" to Quit'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -99727,7 +99729,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -43.282303, y: 0, z: -15.040848, w: 0}
+  m_margin: {x: -92.19299, y: 0, z: -15.040848, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -100148,8 +100150,8 @@ PolygonCollider2D:
       - {x: 85.98863, y: 23.34226}
       - {x: 40.57138, y: 23.852001}
       - {x: 40.551304, y: 7.7349052}
-      - {x: 40.55278, y: 7.3794107}
-      - {x: 40.560883, y: 6.913047}
+      - {x: 40.588776, y: 7.4873953}
+      - {x: 41.005108, y: 7.4927216}
       - {x: 59.12179, y: 7.427903}
       - {x: 58.975063, y: -10.702535}
       - {x: 58.467773, y: -10.703484}
@@ -101719,6 +101721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winAnim: {fileID: 1697332193}
+  ss: {fileID: 2084290310}
   doorToEnd: {fileID: 1798745868}
 --- !u!66 &1798745870
 CompositeCollider2D:

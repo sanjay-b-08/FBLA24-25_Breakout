@@ -176,8 +176,11 @@ public class SkillsScript : MonoBehaviour
         g.gameObject.GetComponent<GuardPursue>().canCatch = false;
         //Cooldown for guard to stop moving
         yield return new WaitForSeconds(5f);
-        g.gameObject.GetComponent<GuardPursue>().movable = true;
-        g.gameObject.GetComponent<GuardPursue>().canCatch = true;
+        if (g != null)
+        {
+            g.gameObject.GetComponent<GuardPursue>().movable = true;
+            g.gameObject.GetComponent<GuardPursue>().canCatch = true;
+        }
 
         //Cooldown for the act of bribing
         yield return new WaitForSeconds(bribeCooldown);

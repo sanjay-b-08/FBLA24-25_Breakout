@@ -52,6 +52,7 @@ public class GuardPursue : MonoBehaviour
 
             if (UnityEngine.Input.GetKeyDown(KeyCode.Q))
             {
+                Debug.Log("Try Again Pressed");
                 currentSceneName = SceneManager.GetActiveScene().name;
                 Time.timeScale = 1.0f;
                 SceneManager.LoadScene(currentSceneName);
