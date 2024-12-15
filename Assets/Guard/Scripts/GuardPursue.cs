@@ -29,19 +29,15 @@ public class GuardPursue : MonoBehaviour
     public Animator gameOverAnim;
     private string currentSceneName;
 
+    public SkillsScript ss;
+
     // Start is called before the first frame update
     void Start()
     {
         isGameOver = false;
         movable = true;
         canCatch = true;
-
-        //tryAgainButton.GetComponent<Button>().enabled = false;
-
         moveSpeed = 3f;
-
-        //gameOverAnim = GetComponent<Animator>();
-
     }
 
     // Update is called once per frame
@@ -51,6 +47,7 @@ public class GuardPursue : MonoBehaviour
         if (isGameOver)
         {
             Time.timeScale = 0.05f;
+            ss.isGameOver = true;
             GameOver();
 
             if (UnityEngine.Input.GetKeyDown(KeyCode.Q))

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -12,6 +13,9 @@ using Image = UnityEngine.UI.Image;
 public class DoorToEndDestruct : MonoBehaviour
 {
     private bool playerWin = false;
+    private string currentSceneName;
+
+    public Animator winAnim;
 
     public Tilemap doorToEnd;
 
@@ -32,13 +36,19 @@ public class DoorToEndDestruct : MonoBehaviour
         {
             playerWins();
             Time.timeScale = 0.05f;
+            if (UnityEngine.Input.GetKeyDown(KeyCode.Q))
+            {
+                currentSceneName = SceneManager.GetActiveScene().name;
+                Time.timeScale = 1.0f;
+                SceneManager.LoadScene(currentSceneName);
+            }
         }
 
     }
 
     private void playerWins()
     {
-        
+        winAnim.SetBool("playerWin", true);
     }
 
 }

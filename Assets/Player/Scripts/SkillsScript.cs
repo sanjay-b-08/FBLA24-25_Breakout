@@ -36,10 +36,13 @@ public class SkillsScript : MonoBehaviour
     public LayerMask foreGround;
     private float maxRayDistance = 4f;
 
+    public bool isGameOver;
+
     void Start()
     {
         bribeMoney = 0;
         onKillCooldown = false;
+        isGameOver = false;
 
         killColorAlpha = killFillCirc.color;
         bribeImageAlpha = bribeImage.color;
@@ -60,10 +63,10 @@ public class SkillsScript : MonoBehaviour
         bribeMoneyText.SetText("Bribe Money: " + bribeMoney);
         killCountText.SetText("Kill Count: " + killCount);
 
-        if (killFillCirc.fillAmount < 8)
+        /*if (killFillCirc.fillAmount < 8)
         {
             killFillCirc.fillAmount += 0.00064f;
-        }
+        }*/
 
         if (bribeMoney >= bribeCost)
         {
@@ -93,7 +96,7 @@ public class SkillsScript : MonoBehaviour
 
     private void kill(GameObject g)
     {
-        if (g != null && Vector3.Distance(transform.position, g.transform.position) < 4f && onKillCooldown == false)
+        if (g != null && Vector3.Distance(transform.position, g.transform.position) < 4f && onKillCooldown == false && isGameOver != true)
         {
             if (canUseSkill(g)) {
                 killColorAlpha.a = 1f;
@@ -116,7 +119,7 @@ public class SkillsScript : MonoBehaviour
 
     private void bribe(GameObject g)
     {
-        if (g != null && Vector3.Distance(transform.position, g.transform.position) < 4f)
+        if (g != null && Vector3.Distance(transform.position, g.transform.position) < 4f && isGameOver != true)
         {
             /*if (bribeMoney >= bribeCost)
             {
@@ -187,6 +190,7 @@ public class SkillsScript : MonoBehaviour
         killText.alpha = 0.2f;
         yield return new WaitForSeconds(killCooldown);
         killText.alpha = 1;
+        killFillCirc.fillAmount = 8;
         onKillCooldown = false;
     }
 
