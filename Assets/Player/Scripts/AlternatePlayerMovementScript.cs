@@ -32,6 +32,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
         dtc = doorToCaf.GetComponent<DoorToCafDestruct>();
         rtc = doorToRec.GetComponent<DoorToRecDestruct>();
         dte = doorToEnd.GetComponent<DoorToEndDestruct>();
+
     }
 
     // Update is called once per frame
@@ -68,6 +69,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
 
         anim.SetFloat("moveX", input.x);
         anim.SetFloat("moveY", input.y);
+
     }
 
     IEnumerator Move(Vector3 tarPos)

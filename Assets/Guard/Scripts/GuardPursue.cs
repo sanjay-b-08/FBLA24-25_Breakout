@@ -31,6 +31,9 @@ public class GuardPursue : MonoBehaviour
 
     public SkillsScript ss;
 
+    public AudioSource guardShoutSound;
+    private bool shoutSoundPlayed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +41,8 @@ public class GuardPursue : MonoBehaviour
         movable = true;
         canCatch = true;
         moveSpeed = 3f;
+
+        shoutSoundPlayed = false;
     }
 
     // Update is called once per frame
@@ -46,7 +51,7 @@ public class GuardPursue : MonoBehaviour
 
         if (isGameOver)
         {
-            Time.timeScale = 0.05f;
+            Time.timeScale = 0f;
             ss.isGameOver = true;
             GameOver();
 
@@ -65,11 +70,20 @@ public class GuardPursue : MonoBehaviour
 
         if (distance < 4f && movable)
         {
+            if (!shoutSoundPlayed)
+            {
+                guardShoutSound.Play();
+                shoutSoundPlayed= true;
+            }
+
             Vector2 pos = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
             if (noCollision(pos))
             {
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
             }
+        } else
+        {
+            shoutSoundPlayed = false;
         }
 
         if (caught(transform.position) && canCatch)

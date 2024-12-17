@@ -28,10 +28,15 @@ public class DoorToEndDestruct : MonoBehaviour
 
     public void Update()
     {
+        /*if (escapeSound.isPlaying)
+        {
+            Debug.Log("Escape Sound Played");
+        }*/
+
         if (playerWin)
         {
             Time.timeScale = 0.05f;
-            ss.isGameOver = true;
+            //ss.isGameOver = true;
             playerWins();
 
             if (Input.GetKeyDown(KeyCode.R))

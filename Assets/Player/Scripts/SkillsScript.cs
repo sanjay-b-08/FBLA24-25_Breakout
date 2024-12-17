@@ -12,6 +12,15 @@ public class SkillsScript : MonoBehaviour
     public LayerMask coins;
     public LayerMask guard;
 
+    public AudioSource caughtSound;
+    private bool didCatchSoundPlay;
+
+    public AudioSource killSound;
+
+    public AudioSource bribeSound;
+
+    public AudioSource coinSound;
+
     //BRIBE
     private int bribeMoney;
     public TextMeshProUGUI bribeMoneyText;
@@ -47,7 +56,7 @@ public class SkillsScript : MonoBehaviour
         killColorAlpha = killFillCirc.color;
         bribeImageAlpha = bribeImage.color;
 
-        //GuardPursue gp = new GuardPursue();
+        didCatchSoundPlay = false;
     }
 
     // Update is called once per frame
@@ -75,6 +84,15 @@ public class SkillsScript : MonoBehaviour
         {
             bribeText.alpha = 0.4f;
         }
+
+        if (isGameOver)
+        {
+            if (!didCatchSoundPlay)
+            {
+                caughtSound.Play();
+                didCatchSoundPlay = true;
+            }
+        }
     }
 
     private void collectCoin(Vector2 targetPos)
@@ -89,6 +107,7 @@ public class SkillsScript : MonoBehaviour
             if (sr != null)
             {
                 bribeMoney += Random.Range((int)1, 4);
+                coinSound.Play();
                 Destroy(collider.gameObject);
             }
         }
@@ -104,6 +123,7 @@ public class SkillsScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.X))
                 {
                     GuardPursue.moveSpeed += 0.32f;
+                    killSound.Play();
                     Destroy(g.gameObject);
                     killCount++;
                     StartCoroutine(killCD());
@@ -134,6 +154,7 @@ public class SkillsScript : MonoBehaviour
 
                     if (Input.GetKeyDown(KeyCode.Z))
                     {
+                        bribeSound.Play();
                         StartCoroutine(pause(g));
                         bribeMoney -= bribeCost;
 
