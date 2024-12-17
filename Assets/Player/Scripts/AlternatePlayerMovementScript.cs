@@ -14,6 +14,8 @@ public class AlternatePlayerMovementScript : MonoBehaviour
 
     public Animator anim;
 
+    public AudioSource escapeSound;
+
     public LayerMask solids;
     public LayerMask cafDoor;
     public LayerMask recDoor;
@@ -117,6 +119,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
         if (Physics2D.OverlapCircle(targetPos, 0.4f, endDoor) != null)
         {
             dte.endDestruct();
+            escapeSound.Play();
         }
     }
 

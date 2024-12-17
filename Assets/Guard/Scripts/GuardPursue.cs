@@ -61,6 +61,10 @@ public class GuardPursue : MonoBehaviour
                 currentSceneName = SceneManager.GetActiveScene().name;
                 Time.timeScale = 1.0f;
                 SceneManager.LoadScene(currentSceneName);
+            } else if (UnityEngine.Input.GetKeyDown(KeyCode.M))
+            {
+                Time.timeScale = 1.0f;
+                SceneManager.LoadScene(0);
             }
 
         }
