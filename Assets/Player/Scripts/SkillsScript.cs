@@ -16,10 +16,9 @@ public class SkillsScript : MonoBehaviour
     private bool didCatchSoundPlay;
 
     public AudioSource killSound;
-
     public AudioSource bribeSound;
-
     public AudioSource coinSound;
+    public AudioSource guardDeathSound;
 
     //BRIBE
     private int bribeMoney;
@@ -47,6 +46,11 @@ public class SkillsScript : MonoBehaviour
 
     public bool isGameOver;
 
+    private float deltaTime = 0.0f;
+
+    //Blood splatters
+    public GameObject blood;
+
     void Start()
     {
         bribeMoney = 0;
@@ -62,6 +66,9 @@ public class SkillsScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        deltaTime += (Time.unscaledDeltaTime - deltaTime) * 0.1f;
+        float fps = 1.0f / deltaTime;
+
         killFillCirc.color = killColorAlpha;
         bribeImage.color = bribeImageAlpha;
 
@@ -72,10 +79,10 @@ public class SkillsScript : MonoBehaviour
         bribeMoneyText.SetText("Bribe Money: " + bribeMoney);
         killCountText.SetText("Kill Count: " + killCount);
 
-        /*if (killFillCirc.fillAmount < 8)
+        if (killFillCirc.fillAmount < 1)
         {
-            killFillCirc.fillAmount += 0.00064f;
-        }*/
+            killFillCirc.fillAmount += (1 / (10 * Mathf.Ceil(fps)));
+        }
 
         if (bribeMoney >= bribeCost)
         {
@@ -124,7 +131,11 @@ public class SkillsScript : MonoBehaviour
                 {
                     GuardPursue.moveSpeed += 0.32f;
                     killSound.Play();
+                    guardDeathSound.Play();
+                    Instantiate(blood, g.transform.position, gameObject.transform.rotation);
+                    //Debug.Log(g.transform.position + "- where it should instantiate, " + blood.transform.position + " - where it instantiated");
                     Destroy(g.gameObject);
+                    killFillCirc.fillAmount = 0;
                     killCount++;
                     StartCoroutine(killCD());
                 }
@@ -141,10 +152,10 @@ public class SkillsScript : MonoBehaviour
     {
         if (g != null && Vector3.Distance(transform.position, g.transform.position) < 4f && isGameOver != true)
         {
-            /*if (bribeMoney >= bribeCost)
+            if (bribeMoney >= bribeCost)
             {
                 bribeImageAlpha.a = 1f;
-            } */
+            }
 
             if (canUseSkill(g))
             {
@@ -210,11 +221,11 @@ public class SkillsScript : MonoBehaviour
     IEnumerator killCD()
     {
         onKillCooldown = true;
-        killFillCirc.fillAmount = 0;
+        //killFillCirc.fillAmount = 0;
         killText.alpha = 0.2f;
         yield return new WaitForSeconds(killCooldown);
         killText.alpha = 1;
-        killFillCirc.fillAmount = 8;
+        //killFillCirc.fillAmount = 8;
         onKillCooldown = false;
     }
 
@@ -230,7 +241,7 @@ public class SkillsScript : MonoBehaviour
             transform.position,  // Starting point
             direction,  // Direction
             Mathf.Min(distance, maxRayDistance),  // Maximum distance
-            foreGround  // Optional layer mask
+            foreGround  // layer mask
         );
 
         if (hit.collider == null)
