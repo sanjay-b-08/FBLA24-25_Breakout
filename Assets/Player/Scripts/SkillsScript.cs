@@ -81,7 +81,7 @@ public class SkillsScript : MonoBehaviour
 
         if (killFillCirc.fillAmount < 1)
         {
-            killFillCirc.fillAmount += (1 / (10 * Mathf.Ceil(fps)));
+            killFillCirc.fillAmount += (1 / (10 * fps));
         }
 
         if (bribeMoney >= bribeCost)
