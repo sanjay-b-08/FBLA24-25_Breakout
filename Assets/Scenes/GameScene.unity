@@ -675,6 +675,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -1089,6 +1092,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -1232,6 +1238,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   solids:
+    serializedVersion: 2
+    m_Bits: 128
+  foreGround:
     serializedVersion: 2
     m_Bits: 128
   movable: 0
@@ -1480,6 +1489,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   solids:
+    serializedVersion: 2
+    m_Bits: 128
+  foreGround:
     serializedVersion: 2
     m_Bits: 128
   movable: 0
@@ -1786,6 +1798,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   solids:
+    serializedVersion: 2
+    m_Bits: 128
+  foreGround:
     serializedVersion: 2
     m_Bits: 128
   movable: 0
@@ -2544,6 +2559,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -2653,6 +2671,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   solids:
+    serializedVersion: 2
+    m_Bits: 128
+  foreGround:
     serializedVersion: 2
     m_Bits: 128
   movable: 0
@@ -3567,6 +3588,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -3810,6 +3834,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   solids:
+    serializedVersion: 2
+    m_Bits: 128
+  foreGround:
     serializedVersion: 2
     m_Bits: 128
   movable: 0
@@ -4107,6 +4134,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   solids:
+    serializedVersion: 2
+    m_Bits: 128
+  foreGround:
     serializedVersion: 2
     m_Bits: 128
   movable: 0
@@ -4645,6 +4675,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -4888,6 +4921,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   solids:
+    serializedVersion: 2
+    m_Bits: 128
+  foreGround:
     serializedVersion: 2
     m_Bits: 128
   movable: 0
@@ -5135,6 +5171,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -5358,6 +5397,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   solids:
+    serializedVersion: 2
+    m_Bits: 128
+  foreGround:
     serializedVersion: 2
     m_Bits: 128
   movable: 0
@@ -6144,6 +6186,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -6671,6 +6716,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -6782,6 +6830,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -6891,6 +6942,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   solids:
+    serializedVersion: 2
+    m_Bits: 128
+  foreGround:
     serializedVersion: 2
     m_Bits: 128
   movable: 0
@@ -37119,6 +37173,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -38037,6 +38094,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -38198,6 +38258,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   solids:
+    serializedVersion: 2
+    m_Bits: 128
+  foreGround:
     serializedVersion: 2
     m_Bits: 128
   movable: 0
@@ -38445,6 +38508,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -38682,6 +38748,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   solids:
+    serializedVersion: 2
+    m_Bits: 128
+  foreGround:
     serializedVersion: 2
     m_Bits: 128
   movable: 0
@@ -38991,6 +39060,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -39296,6 +39368,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   solids:
+    serializedVersion: 2
+    m_Bits: 128
+  foreGround:
     serializedVersion: 2
     m_Bits: 128
   movable: 0
@@ -39801,6 +39876,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -39910,6 +39988,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   solids:
+    serializedVersion: 2
+    m_Bits: 128
+  foreGround:
     serializedVersion: 2
     m_Bits: 128
   movable: 0
@@ -40096,6 +40177,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   solids:
+    serializedVersion: 2
+    m_Bits: 128
+  foreGround:
     serializedVersion: 2
     m_Bits: 128
   movable: 0
@@ -103218,6 +103302,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -103878,6 +103965,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -104154,6 +104244,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -104263,6 +104356,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   solids:
+    serializedVersion: 2
+    m_Bits: 128
+  foreGround:
     serializedVersion: 2
     m_Bits: 128
   movable: 0
@@ -105060,6 +105156,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -105205,6 +105304,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -105314,6 +105416,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   solids:
+    serializedVersion: 2
+    m_Bits: 128
+  foreGround:
     serializedVersion: 2
     m_Bits: 128
   movable: 0
@@ -105738,6 +105843,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   solids:
+    serializedVersion: 2
+    m_Bits: 128
+  foreGround:
     serializedVersion: 2
     m_Bits: 128
   movable: 0
@@ -106375,6 +106483,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -106590,6 +106701,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -106699,6 +106813,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   solids:
+    serializedVersion: 2
+    m_Bits: 128
+  foreGround:
     serializedVersion: 2
     m_Bits: 128
   movable: 0
@@ -107055,6 +107172,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -107243,6 +107363,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -107397,6 +107520,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   solids:
+    serializedVersion: 2
+    m_Bits: 128
+  foreGround:
     serializedVersion: 2
     m_Bits: 128
   movable: 0
@@ -108998,6 +109124,9 @@ MonoBehaviour:
   solids:
     serializedVersion: 2
     m_Bits: 128
+  foreGround:
+    serializedVersion: 2
+    m_Bits: 128
   movable: 0
   canCatch: 0
   gameOverAnim: {fileID: 122092872}
@@ -109235,6 +109364,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   solids:
+    serializedVersion: 2
+    m_Bits: 128
+  foreGround:
     serializedVersion: 2
     m_Bits: 128
   movable: 0

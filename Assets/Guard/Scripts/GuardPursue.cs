@@ -20,6 +20,7 @@ public class GuardPursue : MonoBehaviour
 
     public LayerMask playerMask;
     public LayerMask solids;
+    public LayerMask foreGround;
 
     public bool movable;
     public bool canCatch;
@@ -77,16 +78,24 @@ public class GuardPursue : MonoBehaviour
 
         if (distance < 4f && movable)
         {
-            if (!shoutSoundPlayed)
+            /*if (!shoutSoundPlayed)
             {
                 guardShoutSound.Play();
                 shoutSoundPlayed= true;
-            }
+            }*/
 
             Vector2 pos = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
             if (noCollision(pos))
             {
-                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+                if (canTrackPlayer(player))
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+                    if (!shoutSoundPlayed)
+                    {
+                        guardShoutSound.Play();
+                        shoutSoundPlayed = true;
+                    }
+                }
             }
         } else
         {
@@ -132,6 +141,31 @@ public class GuardPursue : MonoBehaviour
     public bool getIsGameOver()
     {
         return isGameOver;
+    }
+
+    private bool canTrackPlayer(Transform player)
+    {
+        Vector2 direction = (player.transform.position - transform.position).normalized;
+        float distance = Vector2.Distance(transform.position, player.transform.position);
+
+        //Debug.DrawRay(transform.position, direction * Mathf.Min(distance, maxRayDistance), Color.red);
+
+        RaycastHit2D hit = Physics2D.Raycast(
+            transform.position,  // Starting point
+            direction,  // Direction
+            Mathf.Min(distance, 4f),  // Maximum distance
+            foreGround  // layer mask
+        );
+
+        if (hit.collider == null)
+        {
+            return true;
+        }
+        else
+        {
+            //Debug.Log("Obstacle in between");
+            return false;
+        }
     }
 
     void OnDrawGizmosSelected()
