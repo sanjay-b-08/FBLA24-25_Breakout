@@ -90,6 +90,7 @@ public class GuardPursue : MonoBehaviour
                 if (canTrackPlayer(player))
                 {
                     transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+
                     if (!shoutSoundPlayed)
                     {
                         guardShoutSound.Play();
