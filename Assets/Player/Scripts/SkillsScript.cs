@@ -9,6 +9,8 @@ public class SkillsScript : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    public Timer timer;
+
     public LayerMask coins;
     public LayerMask guard;
 
@@ -130,11 +132,15 @@ public class SkillsScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.X))
                 {
                     GuardPursue.moveSpeed += 0.32f;
+
+                    timer.setTimeScore(50);
+
                     killSound.Play();
                     guardDeathSound.Play();
+
                     Instantiate(blood, g.transform.position, gameObject.transform.rotation);
-                    //Debug.Log(g.transform.position + "- where it should instantiate, " + blood.transform.position + " - where it instantiated");
                     Destroy(g.gameObject);
+
                     killFillCirc.fillAmount = 0;
                     killCount++;
                     StartCoroutine(killCD());

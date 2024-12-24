@@ -34,6 +34,8 @@ public class GuardPursue : MonoBehaviour
     public AudioSource guardShoutSound;
     private bool shoutSoundPlayed;
 
+    public Timer timer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +55,7 @@ public class GuardPursue : MonoBehaviour
         {
             Time.timeScale = 0f;
             ss.isGameOver = true;
+            timer.timeIsRunning = false;
             GameOver();
 
             if (UnityEngine.Input.GetKeyDown(KeyCode.Q))

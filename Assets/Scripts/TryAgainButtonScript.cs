@@ -14,7 +14,6 @@ public class TryAgainButton : MonoBehaviour
     }
     public void tryAgain()
     {
-        Debug.Log("Function Called");
         SceneManager.LoadScene(currentSceneName);
     }
 }

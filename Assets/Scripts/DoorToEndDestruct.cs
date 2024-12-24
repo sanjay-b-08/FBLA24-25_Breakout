@@ -13,43 +13,63 @@ using Image = UnityEngine.UI.Image;
 public class DoorToEndDestruct : MonoBehaviour
 {
     private bool playerWin = false;
+
+    private bool exitable;
+    public bool exitableControl;
+    
     private string currentSceneName;
 
     public Animator winAnim;
 
     public SkillsScript ss;
+    public Timer timer;
 
     public Tilemap doorToEnd;
 
+    public GameObject leaderboardScreen;
+
     public void Start()
     {
+        leaderboardScreen.SetActive(false);
         playerWin = false;
+
+        exitableControl = true;
     }
 
     public void Update()
     {
-        /*if (escapeSound.isPlaying)
+        if (exitableControl == true)
         {
-            Debug.Log("Escape Sound Played");
-        }*/
-
+            exitable = true;
+        } else
+        {
+            exitable = false;
+        }
+        
         if (playerWin)
         {
             Time.timeScale = 0.05f;
-            //ss.isGameOver = true;
+            timer.timeIsRunning = false;
+            //exitable = true;
             playerWins();
 
-            if (Input.GetKeyDown(KeyCode.R))
+            if (exitable)
             {
-                Debug.Log("Replay Pressed");
-                Time.timeScale = 1.0f;
-                currentSceneName = SceneManager.GetActiveScene().name;
-                SceneManager.LoadScene(currentSceneName);
-            }
-            else if (Input.GetKeyDown(KeyCode.E))
-            {
-                Debug.Log("Quitting game...");
-                Application.Quit();
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    Time.timeScale = 1.0f;
+                    currentSceneName = SceneManager.GetActiveScene().name;
+                    SceneManager.LoadScene(currentSceneName);
+                }
+                else if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Application.Quit();
+                }
+                else if (Input.GetKeyDown(KeyCode.L))
+                {
+                    leaderboardScreen.SetActive(true);
+                    exitableControl = false;
+                }
             }
         }
     }
