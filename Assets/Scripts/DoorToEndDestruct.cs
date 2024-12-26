@@ -60,6 +60,11 @@ public class DoorToEndDestruct : MonoBehaviour
                     Time.timeScale = 1.0f;
                     currentSceneName = SceneManager.GetActiveScene().name;
                     SceneManager.LoadScene(currentSceneName);
+                } 
+                else if (Input.GetKeyDown(KeyCode.M))
+                {
+                    Time.timeScale = 1.0f;
+                    SceneManager.LoadScene(0);
                 }
                 else if (Input.GetKeyDown(KeyCode.E))
                 {

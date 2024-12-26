@@ -23,9 +23,9 @@ public class ScoreInfoScreenScript : MonoBehaviour
     public void showInfoScreen()
     {
         scoreInfo.SetActive(true);
-        timeScoreInfo.SetText("Score based on time: " + (timer.getFinalScore() + (ss.killCount * 50)));
-        killScoreInfo.SetText("Score reduction based on kill count: " + (ss.killCount * 50));
-        totalScoreInfo.SetText("Total score: " + lm.playerScore);
+        timeScoreInfo.SetText("Score based on time: " + (timer.getFinalScore() + (ss.killCount * 50)) + " points");
+        killScoreInfo.SetText("Score reduction based on kill count: " + (ss.killCount * 50) + " points");
+        totalScoreInfo.SetText("Total score: " + lm.playerScore + " points");
     }
 
     public void goBackToLeaderboardScreen()
