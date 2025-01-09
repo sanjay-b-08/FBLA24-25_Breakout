@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -26,9 +27,14 @@ public class PauseMenu : MonoBehaviour
                 pauseMenu.SetActive(true);
                 PauseGame();
             }
-        } else if (Input.GetKeyDown(KeyCode.Space))
+        } else if (Input.GetKeyDown(KeyCode.Space) && isPaused)
         {
             ResumeGame();
+        } else if (Input.GetKeyDown(KeyCode.M) && isPaused)
+        {
+            Time.timeScale = 1f;
+            isPaused = false;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }
 
