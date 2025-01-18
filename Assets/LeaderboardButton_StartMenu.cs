@@ -19,7 +19,7 @@ public class LeaderboardButton_StartMenu : MonoBehaviour
             {
                 return;
             }
-            //ShowScores();
+            //ShowCurScores();
         });
     }
 
@@ -38,14 +38,14 @@ public class LeaderboardButton_StartMenu : MonoBehaviour
 
             for (int i = 0; i < scores.Length; i++)
             {
-                Entries[i].text = (scores[i].rank + ". " + scores[i].member_id.ToUpper() + "                                                                                      " + scores[i].score);
+                Entries[i].text = (scores[i].rank + ". " + scores[i].member_id.ToUpper() + "--------------------------------------------------------------------------------------" + scores[i].score);
             }
 
             if (scores.Length < maxScores)
             {
                 for (int i = scores.Length; i < maxScores; i++)
                 {
-                    Entries[i].text = (i + 1).ToString() + ". " + "XXX" + "                                                                                      " + "None";
+                    Entries[i].text = (i + 1).ToString() + ". " + "XXX" + "--------------------------------------------------------------------------------------" + "None";
                 }
             }
 

@@ -47,7 +47,7 @@ public class SkillsScript : MonoBehaviour
     private float maxRayDistance = 4f;
 
     public bool isGameOver;
-
+    public Animator screenBloodSplatter;
     private float deltaTime = 0.0f;
 
     //Blood splatters
@@ -136,6 +136,7 @@ public class SkillsScript : MonoBehaviour
                     timer.setTimeScore(50);
 
                     killSound.Play();
+                    screenBloodSplatter.SetBool("isKilling", true);
                     guardDeathSound.Play();
 
                     Instantiate(blood, g.transform.position, gameObject.transform.rotation);
@@ -230,6 +231,7 @@ public class SkillsScript : MonoBehaviour
         //killFillCirc.fillAmount = 0;
         killText.alpha = 0.2f;
         yield return new WaitForSeconds(killCooldown);
+        screenBloodSplatter.SetBool("isKilling", false);
         killText.alpha = 1;
         //killFillCirc.fillAmount = 8;
         onKillCooldown = false;
