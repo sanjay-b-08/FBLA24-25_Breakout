@@ -12,6 +12,8 @@ using Image = UnityEngine.UI.Image;
 
 public class DoorToEndDestruct : MonoBehaviour
 {
+    public AudioSource doorOpen;
+
     private bool playerWin = false;
 
     private bool exitable;
@@ -84,6 +86,7 @@ public class DoorToEndDestruct : MonoBehaviour
         doorToEnd.GetComponent<TilemapCollider2D>().enabled = false;
         doorToEnd.GetComponent<CompositeCollider2D>().enabled = false;
         doorToEnd.GetComponent<BoxCollider2D>().enabled = false;
+        doorOpen.Play();
 
         playerWin = true;
 
