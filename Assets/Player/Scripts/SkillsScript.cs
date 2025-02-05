@@ -27,6 +27,7 @@ public class SkillsScript : MonoBehaviour
     public TextMeshProUGUI bribeMoneyText;
     public int bribeCost;
     public float bribeCooldown;
+    private bool canBribe;
 
     public Image bribeImage;
     public TextMeshProUGUI bribeText;
@@ -63,6 +64,7 @@ public class SkillsScript : MonoBehaviour
         bribeImageAlpha = bribeImage.color;
 
         didCatchSoundPlay = false;
+        canBribe = true;
     }
 
     // Update is called once per frame
@@ -166,18 +168,21 @@ public class SkillsScript : MonoBehaviour
 
             if (canUseSkill(g))
             {
-                if (bribeMoney >= bribeCost)
+                if (bribeMoney >= bribeCost && canBribe)
                 {
                     bribeImageAlpha.a = 1f;
 
-                    if (Input.GetKeyDown(KeyCode.Z))
+                    if (Input.GetKeyDown(KeyCode.Z) && canBribe)
                     {
                         bribeSound.Play();
+                        canBribe = false;
                         StartCoroutine(pause(g));
                         bribeMoney -= bribeCost;
 
                         bribeImageAlpha.a = 0.4f;
                     }
+                } else {
+                    bribeImageAlpha.a = 0.4f;
                 }
             } else {
                 bribeImageAlpha.a = 0.4f;
@@ -220,6 +225,9 @@ public class SkillsScript : MonoBehaviour
             g.gameObject.GetComponent<GuardPursue>().movable = true;
             g.gameObject.GetComponent<GuardPursue>().canCatch = true;
         }
+
+        canBribe = true;
+
 
         //Cooldown for the act of bribing
         yield return new WaitForSeconds(bribeCooldown);
