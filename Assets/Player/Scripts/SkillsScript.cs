@@ -33,6 +33,8 @@ public class SkillsScript : MonoBehaviour
     public TextMeshProUGUI bribeText;
     private Color bribeImageAlpha;
 
+    public GameObject bribeDollar;
+
 
     //KILL
     public TextMeshProUGUI killCountText;
@@ -168,21 +170,31 @@ public class SkillsScript : MonoBehaviour
 
             if (canUseSkill(g))
             {
-                if (bribeMoney >= bribeCost && canBribe)
+                if (bribeMoney >= bribeCost)
                 {
                     bribeImageAlpha.a = 1f;
+                    canBribe = true;
 
                     if (Input.GetKeyDown(KeyCode.Z) && canBribe)
                     {
-                        bribeSound.Play();
-                        canBribe = false;
-                        StartCoroutine(pause(g));
-                        bribeMoney -= bribeCost;
+                        if (g.gameObject.GetComponent<GuardPursue>().isBribed == true)
+                        {
+                            return;
+                        } else
+                        {
+                            bribeSound.Play();
+                            //canBribe = false;
+                            StartCoroutine(pause(g));
+                            bribeMoney -= bribeCost;
 
-                        bribeImageAlpha.a = 0.4f;
+                            bribeImageAlpha.a = 0.4f;
+
+                            g.gameObject.GetComponent<GuardPursue>().isBribed = true;
+                        }
                     }
                 } else {
                     bribeImageAlpha.a = 0.4f;
+                    canBribe = false;
                 }
             } else {
                 bribeImageAlpha.a = 0.4f;
@@ -218,19 +230,20 @@ public class SkillsScript : MonoBehaviour
     {
         g.gameObject.GetComponent<GuardPursue>().movable = false;
         g.gameObject.GetComponent<GuardPursue>().canCatch = false;
+
+        Vector3 spawnPos = new Vector3(g.gameObject.transform.position.x, g.gameObject.transform.position.y + 0.8f, g.gameObject.transform.position.z);
+        GameObject newObject = Instantiate(bribeDollar, spawnPos, Quaternion.identity);
         //Cooldown for guard to stop moving
         yield return new WaitForSeconds(5f);
         if (g != null)
         {
             g.gameObject.GetComponent<GuardPursue>().movable = true;
             g.gameObject.GetComponent<GuardPursue>().canCatch = true;
+            g.gameObject.GetComponent<GuardPursue>().isBribed = false;
+            Destroy(newObject);
         }
 
-        canBribe = true;
-
-
-        //Cooldown for the act of bribing
-        yield return new WaitForSeconds(bribeCooldown);
+        //canBribe = true;
     }
 
     IEnumerator killCD()

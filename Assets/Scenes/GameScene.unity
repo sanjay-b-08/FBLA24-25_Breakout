@@ -684,6 +684,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &119819687
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1101,6 +1102,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &139928498
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1249,6 +1251,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &145920749
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1500,6 +1503,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &191762410
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1809,6 +1813,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &208562747
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2569,6 +2574,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &241181878
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2683,6 +2689,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &261272953
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3656,6 +3663,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &358988726
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3904,6 +3912,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &375593463
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4204,6 +4213,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &484348757
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4743,6 +4753,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &537027904
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4991,6 +5002,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &551594262
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5239,6 +5251,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &569791334
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5467,6 +5480,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &606003292
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6382,6 +6396,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &733096322
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6912,6 +6927,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &847308301
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7026,6 +7042,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &862880285
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7140,6 +7157,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &911950193
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37369,6 +37387,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &991304593
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38424,6 +38443,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1119658824
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38590,6 +38610,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1138878979
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38838,6 +38859,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1143541132
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -39080,6 +39102,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1166218153
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -39390,6 +39413,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1212996694
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -39700,6 +39724,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1218876573
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -40206,6 +40231,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1296767905
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -40320,6 +40346,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1306373709
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -40509,6 +40536,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1347596055
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -103636,6 +103664,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1508180599
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -104299,6 +104328,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1595946856
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -104578,6 +104608,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1623279719
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -104692,6 +104723,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1629149306
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -105623,6 +105655,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1715575225
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -105771,6 +105804,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1724674609
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -105885,6 +105919,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1730175296
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -106449,6 +106484,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1793396387
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -107088,6 +107124,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1828660043
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -107440,6 +107477,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1861777154
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -107554,6 +107592,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1863040374
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -108045,6 +108084,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1938346340
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -108311,6 +108351,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1968309499
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -108470,6 +108511,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &1984955325
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -109913,6 +109955,7 @@ MonoBehaviour:
   bribeCooldown: 7
   bribeImage: {fileID: 285698010}
   bribeText: {fileID: 1177599040}
+  bribeDollar: {fileID: 9123995634521140952, guid: 46345ef1e069bae48a3c4ed0108a4580, type: 3}
   killCountText: {fileID: 1247081702}
   killCount: 0
   killCooldown: 10
@@ -110478,6 +110521,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &2129279741
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -110720,6 +110764,7 @@ MonoBehaviour:
   ss: {fileID: 2084290310}
   guardShoutSound: {fileID: 1523673047}
   timer: {fileID: 2125752960}
+  isBribed: 0
 --- !u!212 &2137489292
 SpriteRenderer:
   m_ObjectHideFlags: 0

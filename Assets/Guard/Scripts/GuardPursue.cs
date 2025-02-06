@@ -37,6 +37,8 @@ public class GuardPursue : MonoBehaviour
 
     public Timer timer;
 
+    public bool isBribed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,8 @@ public class GuardPursue : MonoBehaviour
         moveSpeed = 3f;
 
         shoutSoundPlayed = false;
+
+        isBribed = false;
     }
 
     // Update is called once per frame

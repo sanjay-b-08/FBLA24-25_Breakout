@@ -54,3 +54,6 @@ TagManager:
   - name: Foreground
     uniqueID: 3070193853
     locked: 0
+  - name: DollarSignBribeVisual
+    uniqueID: 969168449
+    locked: 0
