@@ -53,6 +53,8 @@ public class SkillsScript : MonoBehaviour
     public Animator screenBloodSplatter;
     private float deltaTime = 0.0f;
 
+    public Animator pointReductionText;
+
     //Blood splatters
     public GameObject blood;
 
@@ -141,6 +143,7 @@ public class SkillsScript : MonoBehaviour
 
                     killSound.Play();
                     screenBloodSplatter.SetBool("isKilling", true);
+                    pointReductionText.SetBool("pointReduced", true);
                     guardDeathSound.Play();
 
                     Instantiate(blood, g.transform.position, gameObject.transform.rotation);
@@ -233,8 +236,10 @@ public class SkillsScript : MonoBehaviour
 
         Vector3 spawnPos = new Vector3(g.gameObject.transform.position.x, g.gameObject.transform.position.y + 0.8f, g.gameObject.transform.position.z);
         GameObject newObject = Instantiate(bribeDollar, spawnPos, Quaternion.identity);
+
         //Cooldown for guard to stop moving
         yield return new WaitForSeconds(5f);
+
         if (g != null)
         {
             g.gameObject.GetComponent<GuardPursue>().movable = true;
@@ -253,6 +258,7 @@ public class SkillsScript : MonoBehaviour
         killText.alpha = 0.2f;
         yield return new WaitForSeconds(killCooldown);
         screenBloodSplatter.SetBool("isKilling", false);
+        pointReductionText.SetBool("pointReduced", false);
         killText.alpha = 1;
         //killFillCirc.fillAmount = 8;
         onKillCooldown = false;

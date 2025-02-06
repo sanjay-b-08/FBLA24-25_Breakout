@@ -20,6 +20,8 @@ public class Timer : MonoBehaviour
     public LeaderboardManager lm;
     public TextMeshProUGUI score;
 
+    public TextMeshProUGUI updatingScoreText;
+
     void Start()
     {
         timeIsRunning = true;
@@ -37,6 +39,7 @@ public class Timer : MonoBehaviour
             {
                 timeRemaining += Time.deltaTime;
                 DisplayTime(timeRemaining);
+                updatingScoreText.SetText("Overall Score: " + timeScore);
             }
         } else
         {
