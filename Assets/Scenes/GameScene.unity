@@ -5991,7 +5991,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 12 needed to bribe successfully
+  m_text: 10 needed to bribe successfully
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b7d4958e73cfee8429f69149600910e4, type: 2}
   m_sharedMaterial: {fileID: 2374497342352040415, guid: b7d4958e73cfee8429f69149600910e4, type: 2}
@@ -110243,7 +110243,7 @@ MonoBehaviour:
   coinSound: {fileID: 1672377210}
   guardDeathSound: {fileID: 2131384567}
   bribeMoneyText: {fileID: 1140501211}
-  bribeCost: 12
+  bribeCost: 10
   bribeCooldown: 7
   bribeImage: {fileID: 285698010}
   bribeText: {fileID: 1177599040}
