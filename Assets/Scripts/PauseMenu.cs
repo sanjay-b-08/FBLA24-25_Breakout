@@ -26,6 +26,7 @@ public class PauseMenu : MonoBehaviour
             {
                 pauseMenu.SetActive(true);
                 PauseGame();
+                Cursor.visible = false;
             }
         } else if (Input.GetKeyDown(KeyCode.Space) && isPaused)
         {

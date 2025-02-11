@@ -2079,10 +2079,10 @@ MonoBehaviour:
   m_text: 'Movement: Arrow Keys / WASD
 
 
-    Bribe: "Z"
+    Bribe: "Q"
 
 
-    Kill: "X"
+    Kill: "E"
 
 
     Pause:

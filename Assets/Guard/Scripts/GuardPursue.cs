@@ -61,6 +61,7 @@ public class GuardPursue : MonoBehaviour
             Time.timeScale = 0f;
             ss.isGameOver = true;
             timer.timeIsRunning = false;
+            Cursor.visible = true;
             GameOver();
 
             if (UnityEngine.Input.GetKeyDown(KeyCode.Q))

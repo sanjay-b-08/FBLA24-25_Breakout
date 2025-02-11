@@ -135,7 +135,7 @@ public class SkillsScript : MonoBehaviour
             if (canUseSkill(g)) {
                 killColorAlpha.a = 1f;
 
-                if (Input.GetKeyDown(KeyCode.X))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     GuardPursue.moveSpeed += 0.32f;
 
@@ -154,11 +154,11 @@ public class SkillsScript : MonoBehaviour
                     StartCoroutine(killCD());
                 }
             } else {
-                killColorAlpha.a = 0.4f;
+                killColorAlpha.a = 0.1f;
             }
         } else
         {
-            killColorAlpha.a = 0.4f;
+            killColorAlpha.a = 0.1f;
         }
     }
 
@@ -178,7 +178,7 @@ public class SkillsScript : MonoBehaviour
                     bribeImageAlpha.a = 1f;
                     canBribe = true;
 
-                    if (Input.GetKeyDown(KeyCode.Z) && canBribe)
+                    if (Input.GetKeyDown(KeyCode.Q) && canBribe)
                     {
                         if (g.gameObject.GetComponent<GuardPursue>().isBribed == true)
                         {

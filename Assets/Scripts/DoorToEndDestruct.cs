@@ -89,6 +89,7 @@ public class DoorToEndDestruct : MonoBehaviour
         doorOpen.Play();
 
         playerWin = true;
+        UnityEngine.Cursor.visible = true;
 
     }
 
