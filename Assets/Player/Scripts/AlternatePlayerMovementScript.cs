@@ -24,15 +24,15 @@ public class AlternatePlayerMovementScript : MonoBehaviour
     public Tilemap doorToCaf;
     private DoorToCafDestruct dtc;
 
-    public Tilemap doorToRec;
-    private DoorToRecDestruct rtc;
+    //public Tilemap doorToRec;
+    //private DoorToRecDestruct rtc;
 
     public Tilemap doorToEnd;
     private DoorToEndDestruct dte;
     void Start()
     {
         dtc = doorToCaf.GetComponent<DoorToCafDestruct>();
-        rtc = doorToRec.GetComponent<DoorToRecDestruct>();
+        //rtc = doorToRec.GetComponent<DoorToRecDestruct>();
         dte = doorToEnd.GetComponent<DoorToEndDestruct>();
 
     }
@@ -41,7 +41,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
     void Update()
     {
         cafDoorDestruct(transform.position);
-        recDoorDestruct(transform.position);
+        //recDoorDestruct(transform.position);
         endDoorDestruct(transform.position);
 
         if (!moving)
@@ -106,13 +106,13 @@ public class AlternatePlayerMovementScript : MonoBehaviour
         }
     }
 
-    private void recDoorDestruct(Vector2 targetPos)
+    /*private void recDoorDestruct(Vector2 targetPos)
     {
         if (Physics2D.OverlapCircle(targetPos, 0.4f, recDoor) != null)
         {
-            rtc.recDestruct();
+            //rtc.recDestruct();
         }
-    }
+    }*/
 
     private void endDoorDestruct(Vector2 targetPos)
     {
