@@ -11,10 +11,13 @@ public class DoorToCafDestruct : MonoBehaviour
 
     public void cafDestruct()
     {
-        doorToCaf.GetComponent<TilemapRenderer>().enabled = false;
+        /*doorToCaf.GetComponent<TilemapRenderer>().enabled = false;
         doorToCaf.GetComponent<TilemapCollider2D>().enabled = false;
         doorToCaf.GetComponent<CompositeCollider2D>().enabled = false;
-        doorToCaf.GetComponent<BoxCollider2D>().enabled = false;
+        //doorToCaf.GetComponent<Rigidbody2D>().enabled = false;
+        doorToCaf.GetComponent<BoxCollider2D>().enabled = false;*/
+
+        gameObject.SetActive(false);
         doorOpen.Play();
     }
 }
