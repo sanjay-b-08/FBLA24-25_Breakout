@@ -8,6 +8,9 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     public GameObject pauseMenu;
     private bool isPaused;
+
+    public FlashlightScript fs;
+
     void Start()
     {
         pauseMenu.SetActive(false);
@@ -27,6 +30,7 @@ public class PauseMenu : MonoBehaviour
                 pauseMenu.SetActive(true);
                 PauseGame();
                 Cursor.visible = false;
+                fs.canControlLight = false;
             }
         } else if (Input.GetKeyDown(KeyCode.Space) && isPaused)
         {
@@ -50,5 +54,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+        fs.canControlLight = true;
     }
 }
