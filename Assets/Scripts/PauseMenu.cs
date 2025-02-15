@@ -29,7 +29,7 @@ public class PauseMenu : MonoBehaviour
             {
                 pauseMenu.SetActive(true);
                 PauseGame();
-                Cursor.visible = false;
+                Cursor.visible = true;
                 fs.canControlLight = false;
             }
         } else if (Input.GetKeyDown(KeyCode.Space) && isPaused)
@@ -54,6 +54,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+        Cursor.visible = false;
         fs.canControlLight = true;
     }
 }

@@ -19,7 +19,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
 
     public LayerMask solidsAndChest;
     public LayerMask cafDoor;
-    public LayerMask recDoor;
+    //public LayerMask recDoor;
     public LayerMask endDoor;
 
     public LayerMask chest;
@@ -66,8 +66,8 @@ public class AlternatePlayerMovementScript : MonoBehaviour
             if (input != Vector2.zero)
             {
                 Vector2 tarPos = transform.position;
-                tarPos.x += input.x/2;
-                tarPos.y += input.y/2;
+                tarPos.x += input.x/6;
+                tarPos.y += input.y/6;
 
                 if (noCollision(tarPos))
                 {
