@@ -45,7 +45,7 @@ public class GuardPursue : MonoBehaviour
         isGameOver = false;
         movable = true;
         canCatch = true;
-        moveSpeed = 3f;
+        moveSpeed = 2.7f;
 
         shoutSoundPlayed = false;
 

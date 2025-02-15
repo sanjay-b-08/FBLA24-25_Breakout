@@ -27,6 +27,8 @@ public class AlternatePlayerMovementScript : MonoBehaviour
     public Image keyImage;
     private Color keyImageAlpha;
     private bool hasKey;
+    public AudioSource chestOpen;
+    private bool chestAudioPlayed;
 
     public Tilemap doorToShortcut;
     public LayerMask shortcutDoor;
@@ -52,12 +54,14 @@ public class AlternatePlayerMovementScript : MonoBehaviour
         keyImageAlpha = keyImage.color;
         keyImageAlpha.a = 0f;
         hasKey = false;
+        chestAudioPlayed = false;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(chestAudioPlayed.ToString());
         keyImage.color = keyImageAlpha;
 
         cafDoorDestruct(transform.position);
@@ -147,11 +151,16 @@ public class AlternatePlayerMovementScript : MonoBehaviour
 
     private void openChest(Vector2 targetPos)
     {
-        if (Physics2D.OverlapCircle(targetPos, 0.9f, chest) != null)
+        if (Physics2D.OverlapCircle(targetPos, 0.7f, chest) != null)
         {
             chestAnim.SetBool("isUnlocked", true);
             keyImageAlpha.a = 1f;
             hasKey = true;
+            if (!chestAudioPlayed)
+            {
+                chestOpen.Play();
+            }
+            chestAudioPlayed = true;
         }
     }
 
@@ -161,6 +170,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
         {
             dts.shortcutDestruct();
             Destroy(keyReminderAnim);
+            keyImageAlpha.a = 0f;
         }
     }
 
