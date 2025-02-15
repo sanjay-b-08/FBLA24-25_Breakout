@@ -40,6 +40,8 @@ public class AlternatePlayerMovementScript : MonoBehaviour
 
     public Tilemap doorToEnd;
     private DoorToEndDestruct dte;
+
+    public GameObject keyReminderAnim;
     void Start()
     {
         dtc = doorToCaf.GetComponent<DoorToCafDestruct>();
@@ -155,9 +157,10 @@ public class AlternatePlayerMovementScript : MonoBehaviour
 
     private void shortcutDoorDestruct(Vector2 targetPos)
     {
-        if (Physics2D.OverlapCircle(targetPos, 0.4f, shortcutDoor) && hasKey)
+        if (Physics2D.OverlapCircle(targetPos, 0.6f, shortcutDoor) && hasKey)
         {
             dts.shortcutDestruct();
+            Destroy(keyReminderAnim);
         }
     }
 
