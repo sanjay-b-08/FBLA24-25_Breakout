@@ -1,0 +1,844 @@
+fileFormatVersion: 2
+guid: 942e8279e0cbe554f9e6ac7946a050cf
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 189
+        width: 75
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cbe43121ccde9c49805a1d7e981ced8
+      internalID: -1250758202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 189
+        width: 75
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a0fd103b39a38447885fb308e8ba6b3
+      internalID: 2109125814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 189
+        width: 84
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c41c8f229bc1234992e83ab18e56330
+      internalID: -2468112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 189
+        width: 94
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97c891205983fd3468b357a5d107f5d9
+      internalID: 458238819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 189
+        width: 93
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cd6f5d4d86832e429060c8f6f868e8f
+      internalID: -1636396224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 189
+        width: 83
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e225e567c510234b950753ba7eef1e8
+      internalID: -741165754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 189
+        width: 75
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bba7cb142087c734d9c3d7798676f007
+      internalID: 168450460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 189
+        width: 75
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 943c2a855fa7e2748af57e4b18e10389
+      internalID: -2125024311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 138
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c46cfdadfd722cf49bcc09fe9da1912d
+      internalID: -1949915041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 138
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7d839b0f13911641af862fa567c38b1
+      internalID: -618021626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 138
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3655bc751a6f3a409d4012dd782745d
+      internalID: 850378534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 138
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0950ba52ae696b4b90fdc06633e925f
+      internalID: -1056035163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 138
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c4c815a423f4904f919117ca4d3594d
+      internalID: -1232747767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 138
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c27585d6a4f14c847b944ba7e16ce3d6
+      internalID: -80981461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 138
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34d106bc9a47c4344a064473c36da20e
+      internalID: 748240150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 138
+        width: 5
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08ba26c980afa0942a864838e9aa6ee8
+      internalID: -1529749156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 138
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cd6f84cb1c24b742b110c6a68585592
+      internalID: 1293997714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 138
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea1bab39c7f2a1a44a27dee7ad2939df
+      internalID: -356038252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 138
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87faea58708e1ce409d90ebe494b4ab6
+      internalID: 980149171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 138
+        width: 4
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36cd7c0cc17646442b89f0a3680909c8
+      internalID: 1867049231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 138
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 019ea2221b47e04439511e8e4d43c978
+      internalID: -848082126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_21
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 138
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e53b34c3240abc34bb42d9dfdbe1b821
+      internalID: 535853566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_22
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 42
+        width: 75
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ec50fcfaadb5734e8ace632a7b001c5
+      internalID: 1320934898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_23
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 42
+        width: 75
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce71d5a83f41af844915ad87f2a7afc8
+      internalID: -535708348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_24
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 42
+        width: 84
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b4e7f16b5a674a4da19e42210ccd136
+      internalID: 545010620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_25
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 42
+        width: 94
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0a32ead9e95c7649b60ad1fc8e6c948
+      internalID: 818467694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_26
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 42
+        width: 94
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80a60e3f8d6cf3d4aa1387429a7dc6ce
+      internalID: -641829061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_27
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 42
+        width: 84
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a4a9349af3c3894cbfc34ec22a36139
+      internalID: 1893787593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_28
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 42
+        width: 75
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e65e3a18b097eb41911b485458068ca
+      internalID: -1813611412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_29
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 42
+        width: 75
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c58878c08cf9ece45b79c53f67c05872
+      internalID: 221559003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_30
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 4
+        width: 89
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de68a215e6cc6ef41aec9ce4b19c118e
+      internalID: 1101840073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_31
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 4
+        width: 63
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39fd776d29533b54ca32ed1352adfa4b
+      internalID: -1177965044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_0: -1250758202
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_1: 2109125814
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_10: 850378534
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_11: -1056035163
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_12: -1232747767
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_13: -80981461
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_14: 748240150
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_15: -1529749156
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_16: 1293997714
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_17: -356038252
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_18: 980149171
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_19: 1867049231
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_2: -2468112
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_20: -848082126
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_21: 535853566
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_22: 1320934898
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_23: -535708348
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_24: 545010620
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_25: 818467694
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_26: -641829061
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_27: 1893787593
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_28: -1813611412
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_29: 221559003
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_3: 458238819
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_30: 1101840073
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_31: -1177965044
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_4: -1636396224
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_5: -741165754
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_6: 168450460
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_7: -2125024311
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_8: -1949915041
+      pixelated-treasure-chest-animation-game-260nw-2504525003-removebg-preview_9: -618021626
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

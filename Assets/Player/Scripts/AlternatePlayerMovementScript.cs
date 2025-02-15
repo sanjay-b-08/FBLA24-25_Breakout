@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 using UnityEngine.Windows;
 
 public class AlternatePlayerMovementScript : MonoBehaviour
@@ -16,10 +17,15 @@ public class AlternatePlayerMovementScript : MonoBehaviour
 
     public AudioSource escapeSound;
 
-    public LayerMask solids;
+    public LayerMask solidsAndChest;
     public LayerMask cafDoor;
     public LayerMask recDoor;
     public LayerMask endDoor;
+
+    public LayerMask chest;
+    public Animator chestAnim;
+    public Image keyImage;
+    private Color keyImageAlpha;
 
     public Tilemap doorToCaf;
     private DoorToCafDestruct dtc;
@@ -35,14 +41,20 @@ public class AlternatePlayerMovementScript : MonoBehaviour
         //rtc = doorToRec.GetComponent<DoorToRecDestruct>();
         dte = doorToEnd.GetComponent<DoorToEndDestruct>();
 
+        keyImageAlpha = keyImage.color;
+        keyImageAlpha.a = 0f;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        keyImage.color = keyImageAlpha;
+
         cafDoorDestruct(transform.position);
         //recDoorDestruct(transform.position);
         endDoorDestruct(transform.position);
+        openChest(transform.position);
 
         if (!moving)
         {
@@ -90,7 +102,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
     //For collisions
     private bool noCollision(Vector2 targetPos)
     {
-        if (Physics2D.OverlapCircle(targetPos, 0.3f, solids) != null)
+        if (Physics2D.OverlapCircle(targetPos, 0.3f, solidsAndChest) != null)
         {
             //Debug.Log("Collision Detected");
             return false;
@@ -120,6 +132,15 @@ public class AlternatePlayerMovementScript : MonoBehaviour
         {
             dte.endDestruct();
             escapeSound.Play();
+        }
+    }
+
+    private void openChest(Vector2 targetPos)
+    {
+        if (Physics2D.OverlapCircle(targetPos, 0.9f, chest) != null)
+        {
+            if (UnityEngine.Input.GetKeyDown(KeyCode.Space)) chestAnim.SetBool("isUnlocked", true);
+            keyImageAlpha.a = 1f;
         }
     }
 
