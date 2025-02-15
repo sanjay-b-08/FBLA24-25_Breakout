@@ -17,7 +17,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
 
     public AudioSource escapeSound;
 
-    public LayerMask solidsAndChest;
+    public LayerMask solidsAndChestandShortCutDoor;
     public LayerMask cafDoor;
     //public LayerMask recDoor;
     public LayerMask endDoor;
@@ -27,6 +27,10 @@ public class AlternatePlayerMovementScript : MonoBehaviour
     public Image keyImage;
     private Color keyImageAlpha;
     private bool hasKey;
+
+    public Tilemap doorToShortcut;
+    public LayerMask shortcutDoor;
+    private DoorToShortcutDestruct dts;
 
     public Tilemap doorToCaf;
     private DoorToCafDestruct dtc;
@@ -41,6 +45,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
         dtc = doorToCaf.GetComponent<DoorToCafDestruct>();
         //rtc = doorToRec.GetComponent<DoorToRecDestruct>();
         dte = doorToEnd.GetComponent<DoorToEndDestruct>();
+        dts = doorToShortcut.GetComponent<DoorToShortcutDestruct>();
 
         keyImageAlpha = keyImage.color;
         keyImageAlpha.a = 0f;
@@ -57,6 +62,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
         //recDoorDestruct(transform.position);
         endDoorDestruct(transform.position);
         openChest(transform.position);
+        shortcutDoorDestruct(transform.position);
 
         if (!moving)
         {
@@ -104,7 +110,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
     //For collisions
     private bool noCollision(Vector2 targetPos)
     {
-        if (Physics2D.OverlapCircle(targetPos, 0.3f, solidsAndChest) != null)
+        if (Physics2D.OverlapCircle(targetPos, 0.3f, solidsAndChestandShortCutDoor) != null)
         {
             //Debug.Log("Collision Detected");
             return false;
@@ -144,6 +150,14 @@ public class AlternatePlayerMovementScript : MonoBehaviour
             chestAnim.SetBool("isUnlocked", true);
             keyImageAlpha.a = 1f;
             hasKey = true;
+        }
+    }
+
+    private void shortcutDoorDestruct(Vector2 targetPos)
+    {
+        if (Physics2D.OverlapCircle(targetPos, 0.4f, shortcutDoor) && hasKey)
+        {
+            dts.shortcutDestruct();
         }
     }
 
