@@ -26,6 +26,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
     public Animator chestAnim;
     public Image keyImage;
     private Color keyImageAlpha;
+    private bool hasKey;
 
     public Tilemap doorToCaf;
     private DoorToCafDestruct dtc;
@@ -43,6 +44,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
 
         keyImageAlpha = keyImage.color;
         keyImageAlpha.a = 0f;
+        hasKey = false;
 
     }
 
@@ -139,8 +141,9 @@ public class AlternatePlayerMovementScript : MonoBehaviour
     {
         if (Physics2D.OverlapCircle(targetPos, 0.9f, chest) != null)
         {
-            if (UnityEngine.Input.GetKeyDown(KeyCode.Space)) chestAnim.SetBool("isUnlocked", true);
+            chestAnim.SetBool("isUnlocked", true);
             keyImageAlpha.a = 1f;
+            hasKey = true;
         }
     }
 
