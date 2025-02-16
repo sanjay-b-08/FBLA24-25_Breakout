@@ -36,14 +36,23 @@ public class LeaderboardButton_StartMenu : MonoBehaviour
 
             LootLockerLeaderboardMember[] scores = response.items;
 
-            for (int i = 0; i < scores.Length; i++)
+            if (scores != null)
             {
-                Entries[i].text = (scores[i].rank + ". " + scores[i].member_id.ToUpper() + "--------------------------------------------------------------------------------------" + scores[i].score);
-            }
+                for (int i = 0; i < scores.Length; i++)
+                {
+                    Entries[i].text = (scores[i].rank + ". " + scores[i].member_id.ToUpper() + "--------------------------------------------------------------------------------------" + scores[i].score);
+                }
 
-            if (scores.Length < maxScores)
+                if (scores.Length < maxScores)
+                {
+                    for (int i = scores.Length; i < maxScores; i++)
+                    {
+                        Entries[i].text = (i + 1).ToString() + ". " + "XXX" + "--------------------------------------------------------------------------------------" + "None";
+                    }
+                }
+            } else
             {
-                for (int i = scores.Length; i < maxScores; i++)
+                for (int i = 0; i < maxScores; i++)
                 {
                     Entries[i].text = (i + 1).ToString() + ". " + "XXX" + "--------------------------------------------------------------------------------------" + "None";
                 }
