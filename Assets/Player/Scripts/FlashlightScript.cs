@@ -50,12 +50,11 @@ public class FlashlightScript : MonoBehaviour
 
             Vector2 flashlightDistance = worldPosition - transform.position;
 
+            ///////////////////////////////////////////////////////////////////
+
+
             //Ensures that player flashlight follows the distance
             playerFlashlight.pointLightOuterRadius = flashlightDistance.sqrMagnitude;
-            playerFlashlight.pointLightInnerRadius = flashlightDistance.sqrMagnitude - 5.4f;
-
-            playerFlashlight.pointLightInnerAngle = flashlightDistance.sqrMagnitude * 4f;
-
             //Limits outer radius
             if (flashlightDistance.sqrMagnitude < 7.6f)
             {
@@ -65,6 +64,7 @@ public class FlashlightScript : MonoBehaviour
                 playerFlashlight.pointLightOuterRadius = 12f;
             }
 
+            playerFlashlight.pointLightInnerRadius = flashlightDistance.sqrMagnitude - 5.4f;
             //limits inner radius
             if (flashlightDistance.sqrMagnitude - 5.4f < 2.2f)
             {
@@ -75,14 +75,17 @@ public class FlashlightScript : MonoBehaviour
                 playerFlashlight.pointLightInnerRadius = 4.13f;
             }
 
-            //limits inner angle
-            if (flashlightDistance.sqrMagnitude * 4f < 21)
+            playerFlashlight.pointLightOuterAngle = -120 / 11 * (playerFlashlight.pointLightOuterRadius - 7.6f) + 96;
+            if ((-120 / 11 * (playerFlashlight.pointLightOuterRadius - 7.6f) + 96) > 96)
             {
-                playerFlashlight.pointLightInnerAngle = 21f;
-            } else if (flashlightDistance.sqrMagnitude * 4f > 48)
+                playerFlashlight.pointLightOuterAngle = 96f;
+            } else if ((-120 / 11 * (playerFlashlight.pointLightOuterRadius - 7.6f) + 96) < 48)
             {
-                playerFlashlight.pointLightInnerAngle = 48f;
+                playerFlashlight.pointLightOuterAngle = 48f;
             }
+
+            playerFlashlight.pointLightInnerAngle = playerFlashlight.pointLightOuterAngle - 36;
+
         }
 
     }
