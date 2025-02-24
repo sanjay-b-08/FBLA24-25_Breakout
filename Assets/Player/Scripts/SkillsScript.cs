@@ -154,11 +154,11 @@ public class SkillsScript : MonoBehaviour
                     StartCoroutine(killCD());
                 }
             } else {
-                killColorAlpha.a = 0.1f;
+                killColorAlpha.a = 0.2f;
             }
         } else
         {
-            killColorAlpha.a = 0.1f;
+            killColorAlpha.a = 0.2f;
         }
     }
 

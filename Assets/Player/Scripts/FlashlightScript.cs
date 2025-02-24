@@ -27,7 +27,7 @@ public class FlashlightScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canControlLight)
+        if (canControlLight && playerFlashlight != null)
         {
             mousePosition = Input.mousePosition;
             worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
