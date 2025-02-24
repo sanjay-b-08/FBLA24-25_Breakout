@@ -49,7 +49,7 @@ public class SkillsScript : MonoBehaviour
     public LayerMask foreGround;
     private float maxRayDistance = 4f;
 
-    public bool isGameOver;
+    [HideInInspector] public bool isGameOver;
     public Animator screenBloodSplatter;
     private float deltaTime = 0.0f;
 
