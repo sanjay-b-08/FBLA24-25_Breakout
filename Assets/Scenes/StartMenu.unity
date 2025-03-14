@@ -2445,7 +2445,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Movement: Arrow Keys / WASD
+  m_text: 'Movement: WASD
 
 
     Flashlight: Mouse
@@ -2454,11 +2454,11 @@ MonoBehaviour:
     Bribe: "Q"
 
 
-    Kill:
-    "E"
+    Kill: "E"
 
 
-    Pause: "Esc"'
+    Pause:
+    "Esc"'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 744f2fe1307889c41a3cd26adfe51143, type: 2}
   m_sharedMaterial: {fileID: 7638655292816191650, guid: 744f2fe1307889c41a3cd26adfe51143, type: 2}

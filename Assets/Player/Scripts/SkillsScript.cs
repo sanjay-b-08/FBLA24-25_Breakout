@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class SkillsScript : MonoBehaviour
 {
@@ -58,6 +59,13 @@ public class SkillsScript : MonoBehaviour
     //Blood splatters
     public GameObject blood;
 
+    //Input System Initialization
+    public InputActions playerInputActions;
+    private InputAction bribeAction;
+    private InputAction killAction;
+    //private System.Action<InputAction.CallbackContext> Bribe;
+    //private System.Action<InputAction.CallbackContext> Kill;
+
     void Start()
     {
         bribeMoney = 0;
@@ -69,6 +77,26 @@ public class SkillsScript : MonoBehaviour
 
         didCatchSoundPlay = false;
         canBribe = true;
+    }
+
+    private void Awake()
+    {
+        playerInputActions = new InputActions();
+    }
+    private void OnEnable()
+    {
+        bribeAction = playerInputActions.PlayerControls.Bribe;
+        bribeAction.Enable();
+        bribeAction.performed += Bribe;
+
+        killAction = playerInputActions.PlayerControls.Kill;
+        killAction.Enable();
+        killAction.performed += Kill;
+    }
+    private void OnDisable()
+    {
+        bribeAction.Disable();
+        killAction.Disable();
     }
 
     // Update is called once per frame
@@ -135,7 +163,7 @@ public class SkillsScript : MonoBehaviour
             if (canUseSkill(g)) {
                 killColorAlpha.a = 1f;
 
-                if (Input.GetKeyDown(KeyCode.E))
+                if (killAction.IsPressed())
                 {
                     GuardPursue.moveSpeed += 0.32f;
 
@@ -178,7 +206,7 @@ public class SkillsScript : MonoBehaviour
                     bribeImageAlpha.a = 1f;
                     canBribe = true;
 
-                    if (Input.GetKeyDown(KeyCode.Q) && canBribe)
+                    if (bribeAction.IsPressed() && canBribe)
                     {
                         if (g.gameObject.GetComponent<GuardPursue>().isBribed == true)
                         {
@@ -288,5 +316,15 @@ public class SkillsScript : MonoBehaviour
             //Debug.Log("Obstacle in between");
             return false;
         }
+    }
+
+    private void Bribe(InputAction.CallbackContext ctx)
+    {
+        return;
+    }
+
+    private void Kill(InputAction.CallbackContext ctx)
+    {
+        return;
     }
 }

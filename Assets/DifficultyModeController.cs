@@ -17,7 +17,6 @@ public class DifficultyModeController : MonoBehaviour
     private void Awake()
     {
         flashlightToggleAccessor = GameObject.Find("FlashlightToggleAccess").GetComponent<FlashlightToggleAccessor>();
-        //isDifficultyHard = flashlightToggleAccessor.getFlashlight();
     }
 
     // Start is called before the first frame update

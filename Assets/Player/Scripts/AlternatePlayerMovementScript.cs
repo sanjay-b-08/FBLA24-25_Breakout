@@ -5,10 +5,14 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 using UnityEngine.Windows;
+using UnityEngine.InputSystem;
 
 public class AlternatePlayerMovementScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //Input Actions Initalization
+    public InputActions playerInputActions;
+    private InputAction move;
+
     private bool moving;
     private Vector2 input;
     public float moveSpeed = 5f;
@@ -44,6 +48,21 @@ public class AlternatePlayerMovementScript : MonoBehaviour
     private DoorToEndDestruct dte;
 
     public GameObject keyReminderAnim;
+
+    private void Awake()
+    {
+        playerInputActions = new InputActions();
+    }
+    private void OnEnable()
+    {
+        move = playerInputActions.PlayerControls.Movement;
+        move.Enable();
+    }
+    private void OnDisable()
+    {
+        move.Disable();
+    }
+
     void Start()
     {
         dtc = doorToCaf.GetComponent<DoorToCafDestruct>();
@@ -72,8 +91,10 @@ public class AlternatePlayerMovementScript : MonoBehaviour
 
         if (!moving)
         {
-            input.x = UnityEngine.Input.GetAxisRaw("Horizontal");
-            input.y = UnityEngine.Input.GetAxisRaw("Vertical");
+            //input.x = UnityEngine.Input.GetAxisRaw("Horizontal"); // change this part 
+            //input.y = UnityEngine.Input.GetAxisRaw("Vertical"); // change this part
+
+            input = move.ReadValue<Vector2>();
 
             if (input != Vector2.zero)
             {
