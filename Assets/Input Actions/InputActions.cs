@@ -53,6 +53,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""e842df95-51f0-4320-8cb2-9fd92b2ed32e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -132,6 +141,17 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Kill"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""64001802-2c2b-4d5c-bbfd-3cf51072b51c"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -143,6 +163,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_PlayerControls_Movement = m_PlayerControls.FindAction("Movement", throwIfNotFound: true);
         m_PlayerControls_Bribe = m_PlayerControls.FindAction("Bribe", throwIfNotFound: true);
         m_PlayerControls_Kill = m_PlayerControls.FindAction("Kill", throwIfNotFound: true);
+        m_PlayerControls_Pause = m_PlayerControls.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -207,6 +228,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerControls_Movement;
     private readonly InputAction m_PlayerControls_Bribe;
     private readonly InputAction m_PlayerControls_Kill;
+    private readonly InputAction m_PlayerControls_Pause;
     public struct PlayerControlsActions
     {
         private @InputActions m_Wrapper;
@@ -214,6 +236,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_PlayerControls_Movement;
         public InputAction @Bribe => m_Wrapper.m_PlayerControls_Bribe;
         public InputAction @Kill => m_Wrapper.m_PlayerControls_Kill;
+        public InputAction @Pause => m_Wrapper.m_PlayerControls_Pause;
         public InputActionMap Get() { return m_Wrapper.m_PlayerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -232,6 +255,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Kill.started += instance.OnKill;
             @Kill.performed += instance.OnKill;
             @Kill.canceled += instance.OnKill;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IPlayerControlsActions instance)
@@ -245,6 +271,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Kill.started -= instance.OnKill;
             @Kill.performed -= instance.OnKill;
             @Kill.canceled -= instance.OnKill;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IPlayerControlsActions instance)
@@ -267,5 +296,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnBribe(InputAction.CallbackContext context);
         void OnKill(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }

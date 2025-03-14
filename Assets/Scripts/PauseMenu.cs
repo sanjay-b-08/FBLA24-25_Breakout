@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
@@ -11,15 +13,34 @@ public class PauseMenu : MonoBehaviour
 
     public FlashlightScript fs;
 
+    //Input System Initialization
+    public InputActions playerInputActions;
+    private InputAction pauseAction;
+
     void Start()
     {
         pauseMenu.SetActive(false);
     }
 
+    private void Awake()
+    {
+        playerInputActions = new InputActions();
+    }
+    private void OnEnable()
+    {
+        pauseAction = playerInputActions.PlayerControls.Pause;
+        pauseAction.Enable();
+        pauseAction.performed += Pause;
+    }
+    private void OnDisable()
+    {
+        pauseAction.Disable();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (pauseAction.IsPressed())
         {
             if (isPaused)
             {
@@ -56,5 +77,10 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
         Cursor.visible = false;
         fs.canControlLight = true;
+    }
+
+    private void Pause(InputAction.CallbackContext ctx)
+    {
+        return;
     }
 }
