@@ -1,29 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class FlashlightToggleAccessor : MonoBehaviour
 {
     //If flashlight is on --> hard mode; if flashlight is off --> easy mode
-    private bool isFlashlightOn = true; //ALWAYS SETS TO X WHEN RELOADED
+    private bool isFlashlightOn = true;
+    [SerializeField] private InputActionAsset inputActions;
 
     //private static FlashlightToggleAccessor instance;
 
     private void Awake()
     {
-        /*//Singleton Model
-        if (instance != null)
-        {
-            Destroy(gameObject); 
-            return;
-        } else {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-
-            Debug.Log("PersistentObject Initialized, myBool is: " + isFlashlightOn);
-
-        }*/
 
         // Find all objects in the scene of the same type
         GameObject[] objectsWithSameName = GameObject.FindGameObjectsWithTag("FlashlightToggleAccess");  // Optional: Use a tag to filter if necessary

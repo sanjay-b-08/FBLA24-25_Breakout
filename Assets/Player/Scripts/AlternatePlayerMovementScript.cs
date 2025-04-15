@@ -9,9 +9,10 @@ using UnityEngine.InputSystem;
 
 public class AlternatePlayerMovementScript : MonoBehaviour
 {
-    //Input Actions Initalization
+    //Input Actions Initalization - initial game mechanics: wasd - move; q - bribe; e - kill; mouse - flashlight; escape - pause; 
     public InputActions playerInputActions;
     private InputAction move;
+
 
     private bool moving;
     private Vector2 input;

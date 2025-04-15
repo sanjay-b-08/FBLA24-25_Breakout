@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Guard
   - FlashlightToggleAccess
+  - KeyRemapperManager
   layers:
   - Default
   - TransparentFX

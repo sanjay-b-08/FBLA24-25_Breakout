@@ -45,7 +45,7 @@ public class PauseMenu : MonoBehaviour
             if (isPaused)
             {
                 Application.Quit();
-                Debug.Log("Quitting Game...");
+                //Debug.Log("Quitting Game...");
             } else
             {
                 pauseMenu.SetActive(true);
