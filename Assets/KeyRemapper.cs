@@ -39,6 +39,7 @@ public class KeyRemapper : MonoBehaviour
 
         // Ensure this object persists across scenes (if needed)
         DontDestroyOnLoad(gameObject);
+        Debug.Log($"Object {gameObject.name} is the same instance as reference (Memory ID: {gameObject.GetInstanceID()})");
         //Debug.Log("PersistentObject Initialized, myBool is: " + isFlashlightOn);
 
     }
