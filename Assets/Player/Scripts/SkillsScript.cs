@@ -165,7 +165,7 @@ public class SkillsScript : MonoBehaviour
 
                 if (killAction.IsPressed())
                 {
-                    GuardPursue.moveSpeed += 0.32f;
+                    GuardPursue.moveSpeed += 0.26f;
 
                     timer.setTimeScore(50);
 
