@@ -4,6 +4,9 @@ using TMPro;
 
 public class KeyRemapper : MonoBehaviour
 {
+    //THE KEY REBINDS PERSIST FOR EACH PLAY THROUGH, DOES NOT RESET!!!!!!!
+
+
     [Header("Action References")]
     public InputActionReference bribeAction;
     public InputActionReference killAction;

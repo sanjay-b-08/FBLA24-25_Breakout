@@ -70,7 +70,7 @@ public class SkillsScript : MonoBehaviour
 
     void Start()
     {
-        bribeMoney = 20;
+        bribeMoney = 0;
         onKillCooldown = false;
         isGameOver = false;
 
