@@ -9,7 +9,9 @@ public class PauseMenu : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject pauseMenu;
-    private bool isPaused;
+    public bool isPaused;
+
+    public bool isOnControlScreen;
 
     public FlashlightScript fs;
 
@@ -20,6 +22,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         pauseMenu.SetActive(false);
+        isPaused = false;
     }
 
     private void Awake()
@@ -40,12 +43,11 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pauseAction.IsPressed())
+        /*if (pauseAction.IsPressed())
         {
             if (isPaused)
             {
-                Application.Quit();
-                //Debug.Log("Quitting Game...");
+                QuitGame();
             } else
             {
                 pauseMenu.SetActive(true);
@@ -58,17 +60,31 @@ public class PauseMenu : MonoBehaviour
             ResumeGame();
         } else if (Input.GetKeyDown(KeyCode.M) && isPaused)
         {
-            Time.timeScale = 1f;
-            isPaused = false;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            ToMainMenu();
+        }*/
+
+        if (pauseAction.IsPressed())
+        {
+            PauseGame();
         }
     }
 
     public void PauseGame()
     {
+        pauseMenu.SetActive(true);
+
         Time.timeScale = 0f;
         isPaused = true;
+
+        Cursor.visible = true;
+        fs.canControlLight = false;
     }
+
+    /*public void QuitGame()
+    {
+        Application.Quit();
+        //Debug.Log("Quitting Game...");
+    }*/
 
     public void ResumeGame()
     {
@@ -77,6 +93,13 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
         Cursor.visible = false;
         fs.canControlLight = true;
+    }
+
+    public void ToMainMenu()
+    {
+        Time.timeScale = 1f;
+        isPaused = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     private void Pause(InputAction.CallbackContext ctx)

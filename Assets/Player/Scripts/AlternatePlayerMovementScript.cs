@@ -11,7 +11,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
 {
     //Input Actions Initalization - initial game mechanics: wasd - move; q - bribe; e - kill; mouse - flashlight; escape - pause; 
     public InputActions playerInputActions;
-    private InputAction move;
+    public InputActionReference move;
 
 
     private bool moving;
@@ -56,12 +56,11 @@ public class AlternatePlayerMovementScript : MonoBehaviour
     }
     private void OnEnable()
     {
-        move = playerInputActions.PlayerControls.Movement;
-        move.Enable();
+        move.action.Enable();
     }
     private void OnDisable()
     {
-        move.Disable();
+        move.action.Disable();
     }
 
     void Start()
@@ -95,7 +94,7 @@ public class AlternatePlayerMovementScript : MonoBehaviour
             //input.x = UnityEngine.Input.GetAxisRaw("Horizontal"); // change this part 
             //input.y = UnityEngine.Input.GetAxisRaw("Vertical"); // change this part
 
-            input = move.ReadValue<Vector2>();
+            input = move.action.ReadValue<Vector2>();
 
             if (input != Vector2.zero)
             {

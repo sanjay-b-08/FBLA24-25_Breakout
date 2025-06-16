@@ -1,147 +1,139 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
+using TMPro;
 
-//THIS SCRIPT DOESNT CARRY ON OVER TO THE NEXT SCREEN
-
-public class KeyRemapper : MonoBehaviour
+public class KeyRebindManager : MonoBehaviour
 {
-    [SerializeField] private InputActionReference pauseAction = null;
+    [Header("Rebind Settings")]
+    public InputActionReference bribeAction;
+    public TMP_Text bribeText;
 
-    [SerializeField] private InputActionAsset playerInputActions;
-    
-    [SerializeField] TMP_Text pauseControlText;
- 
+    [Header("Action Map Reference")]
+    public InputActionAsset playerControls; // Drag your PlayerControls asset here
 
-    private int x = 1;
+    [Header("Display Settings")]
+    [SerializeField] private string waitingText = "Waiting for input...";
 
     private InputActionRebindingExtensions.RebindingOperation rebindingOperation;
+    private string originalBindingName;
 
-    private void Awake()
+    private void Start()
     {
-
-        // Find all objects in the scene of the same type
-        GameObject[] objectsWithSameName = GameObject.FindGameObjectsWithTag("KeyRemapperManager");  // Optional: Use a tag to filter if necessary
-
-        foreach (GameObject obj in objectsWithSameName)
+        // Debug: Check if action is properly set up
+        if (bribeAction == null)
         {
-            // Check if the object is not the current one (this object)
-            if (obj != this.gameObject && obj.name == this.gameObject.name)
-            {
-                Destroy(obj);
-            }
+            return;
         }
 
-        // Ensure this object persists across scenes (if needed)
-        DontDestroyOnLoad(gameObject);
-        Debug.Log($"Object {gameObject.name} is the same instance as reference (Memory ID: {gameObject.GetInstanceID()})");
-        //Debug.Log("PersistentObject Initialized, myBool is: " + isFlashlightOn);
+        if (bribeAction.action == null)
+        {
+            return;
+        }
 
+
+        // Store the original binding display name
+        originalBindingName = bribeAction.action.GetBindingDisplayString();
+        UpdateBindingText(originalBindingName);
     }
 
-    //MAKE IT SO THAT THE BINDINGS ARE LOADED ONCE YOU GET ONTO THE GAME SCENE ONCE (NOT ON UPDATE)
-
-    void Start()
+    private void OnDestroy()
     {
-        // Load saved rebinds from PlayerPrefs
-        LoadBindings();
-
-
-        // Find the action
-        InputAction pauseActionBind = playerInputActions.FindAction("Pause"); //GENERALIZE THIS FOR ALL THE PLAUSIBLE REBINDS
-        if (pauseActionBind != null)
-        {
-            // Get the currently bound key (AFTER rebinding)
-            pauseControlText.SetText(pauseActionBind.GetBindingDisplayString());
-            //Debug.Log($"Action '{pauseActionBind}' is currently bound to: {keyName}");
-        }
-        else
-        {
-            Debug.LogWarning($"Action '{pauseActionBind}' not found.");
-        }
+        // Clean up the rebinding operation if it's still running
+        rebindingOperation?.Dispose();
     }
 
-    void Update()
+    public void StartRebinding()
     {
-        if (SceneManager.GetActiveScene().name == "GameScene")
+        if (bribeAction == null || bribeAction.action == null)
         {
-            if (PlayerPrefs.GetInt("BindingsLoaded", 0) == 0) // 0 means not loaded yet
-            {
-                LoadBindings();
-                Debug.Log($"Bindings set in Game Scene {x} times");
-                x++;
-                PlayerPrefs.SetInt("BindingsLoaded", 1); // Mark bindings as loaded
-                PlayerPrefs.Save(); // Save the PlayerPrefs to persist the flag
-
-                //Debug.Log("Loading rebinds from PlayerPrefs: " + PlayerPrefs.GetString("rebinds", ""));
-
-            }
+            return;
         }
 
-        if (SceneManager.GetActiveScene().name == "StartMenu")
+        // Make sure the action is enabled
+        if (!bribeAction.action.enabled)
         {
-            if (PlayerPrefs.GetInt("BindingsLoaded", 0) == 1) // 0 means not loaded yet
-            {
-                LoadBindings();
-                //Debug.Log($"Bindings set in Game Scene {x} times");
-                //x++;
-                PlayerPrefs.SetInt("BindingsLoaded", 0); // Mark bindings as loaded
-                PlayerPrefs.Save(); // Save the PlayerPrefs to persist the flag
-
-                //Debug.Log("Loading rebinds from PlayerPrefs: " + PlayerPrefs.GetString("rebinds", ""));
-
-            }
+            bribeAction.action.Enable();
         }
-    }
 
-    public void StartPauseRebind()
-    {
-        pauseControlText.SetText("Waiting For Input...");
+        // Disable the action temporarily during rebinding
+        bribeAction.action.Disable();
 
-        rebindingOperation = pauseAction.action.PerformInteractiveRebinding()
+        // Update UI to show waiting state
+        UpdateBindingText(waitingText);
+
+        // Start the rebinding operation
+        rebindingOperation = bribeAction.action
+            .PerformInteractiveRebinding(0) // Target first binding
             .WithControlsExcluding("Mouse")
+            .WithControlsExcluding("<Keyboard>/escape") // Don't allow escape as a binding
             .OnMatchWaitForAnother(0.1f)
-            .OnComplete(operation => CompleteRebind(pauseControlText, pauseAction))
+            .OnComplete(operation => OnRebindComplete())
+            .OnCancel(operation => OnRebindCancel())
             .Start();
+
     }
 
-    private void CompleteRebind(TMP_Text text, InputActionReference referenceAction)
+    private void OnRebindComplete()
     {
-        int bindingIndex = referenceAction.action.GetBindingIndexForControl(referenceAction.action.controls[0]);
 
-        text.SetText(InputControlPath.ToHumanReadableString(referenceAction.action.bindings[bindingIndex].effectivePath, 
-            InputControlPath.HumanReadableStringOptions.OmitDevice));
-
-        SaveBindings();
-
-        rebindingOperation.Dispose();
-    }
-
-    public void SaveBindings()
-    {
-        string rebinds = playerInputActions.SaveBindingOverridesAsJson();
-        PlayerPrefs.SetString("rebinds", rebinds);
-        PlayerPrefs.Save();
-    }
-
-    public void LoadBindings()
-    {
-        string savedRebinds = PlayerPrefs.GetString("rebinds", "");
-        Debug.Log("Loading rebinds from PlayerPrefs: " + savedRebinds);
-
-        if (!string.IsNullOrEmpty(savedRebinds))
+        // Apply the rebinding to the entire action asset to ensure consistency
+        if (playerControls != null)
         {
-            playerInputActions.LoadBindingOverridesFromJson(savedRebinds);
-            Debug.Log("Bindings loaded successfully.");
+            // Save the current overrides
+            string rebindings = bribeAction.action.SaveBindingOverridesAsJson();
+
+            // Apply to the action asset
+            playerControls.LoadBindingOverridesFromJson(rebindings);
         }
-        else
+
+        // Get the new binding display name
+        string newBindingName = bribeAction.action.GetBindingDisplayString();
+        UpdateBindingText(newBindingName);
+
+        // Debug: Print all bindings after rebind
+        for (int i = 0; i < bribeAction.action.bindings.Count; i++)
         {
-            Debug.LogWarning("No saved bindings found.");
+            var binding = bribeAction.action.bindings[i];
+        }
+
+        // Clean up and re-enable
+        CleanupRebinding();
+    }
+
+    private void OnRebindCancel()
+    {
+
+        // Restore original binding text
+        UpdateBindingText(originalBindingName);
+
+        // Clean up and re-enable
+        CleanupRebinding();
+    }
+
+    private void CleanupRebinding()
+    {
+        // Dispose of the rebinding operation
+        rebindingOperation?.Dispose();
+        rebindingOperation = null;
+
+        // Re-enable the action
+        bribeAction.action.Enable();
+    }
+
+    private void UpdateBindingText(string text)
+    {
+        if (bribeText != null)
+        {
+            bribeText.text = text;
         }
     }
+
+    /*// Test method to check if the action is working
+    private void Update()
+    {
+        if (bribeAction != null && bribeAction.action != null && bribeAction.action.WasPressedThisFrame())
+        {
+            Debug.Log("Bribe action triggered!");
+        }
+    }*/
 }

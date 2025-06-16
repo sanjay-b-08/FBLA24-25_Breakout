@@ -10,6 +10,8 @@ public class SkillsScript : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    public PauseMenu pm;
+
     public Timer timer;
 
     public LayerMask coins;
@@ -61,14 +63,14 @@ public class SkillsScript : MonoBehaviour
 
     //Input System Initialization
     public InputActions playerInputActions;
-    private InputAction bribeAction;
-    private InputAction killAction;
+    public InputActionReference bribeAction;
+    public InputActionReference killAction;
     //private System.Action<InputAction.CallbackContext> Bribe;
     //private System.Action<InputAction.CallbackContext> Kill;
 
     void Start()
     {
-        bribeMoney = 0;
+        bribeMoney = 20;
         onKillCooldown = false;
         isGameOver = false;
 
@@ -85,24 +87,23 @@ public class SkillsScript : MonoBehaviour
     }
     private void OnEnable()
     {
-        bribeAction = playerInputActions.PlayerControls.Bribe;
-        bribeAction.Enable();
-        bribeAction.performed += Bribe;
+        //bribeAction = playerInputActions.PlayerControls.Bribe;
+        bribeAction.action.Enable();
+        bribeAction.action.performed += Bribe;
 
-        killAction = playerInputActions.PlayerControls.Kill;
-        killAction.Enable();
-        killAction.performed += Kill;
+        killAction.action.Enable();
+        killAction.action.performed += Kill;
     }
     private void OnDisable()
     {
-        bribeAction.Disable();
-        killAction.Disable();
+        bribeAction.action.Disable();
+        killAction.action.Disable();
     }
 
     // Update is called once per frame
     void Update()
     {
-        deltaTime += (Time.unscaledDeltaTime - deltaTime) * 0.1f;
+        deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
         float fps = 1.0f / deltaTime;
 
         killFillCirc.color = killColorAlpha;
@@ -163,7 +164,7 @@ public class SkillsScript : MonoBehaviour
             if (canUseSkill(g)) {
                 killColorAlpha.a = 1f;
 
-                if (killAction.IsPressed())
+                if (killAction.action.IsPressed() && !pm.isPaused)
                 {
                     GuardPursue.moveSpeed += 0.26f;
 
@@ -206,7 +207,7 @@ public class SkillsScript : MonoBehaviour
                     bribeImageAlpha.a = 1f;
                     canBribe = true;
 
-                    if (bribeAction.IsPressed() && canBribe)
+                    if (bribeAction.action.IsPressed() && canBribe && !pm.isPaused)
                     {
                         if (g.gameObject.GetComponent<GuardPursue>().isBribed == true)
                         {
