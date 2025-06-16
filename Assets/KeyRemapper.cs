@@ -2,138 +2,213 @@
 using UnityEngine.InputSystem;
 using TMPro;
 
-public class KeyRebindManager : MonoBehaviour
+public class KeyRemapper : MonoBehaviour
 {
-    [Header("Rebind Settings")]
+    [Header("Action References")]
     public InputActionReference bribeAction;
+    public InputActionReference killAction;
+    public InputActionReference movementAction;  // Single movement action with composite
+
+    [Header("UI Text References")]
     public TMP_Text bribeText;
+    public TMP_Text killText;
+    public TMP_Text moveForwardText;
+    public TMP_Text moveLeftText;
+    public TMP_Text moveBackText;
+    public TMP_Text moveRightText;
 
     [Header("Action Map Reference")]
-    public InputActionAsset playerControls; // Drag your PlayerControls asset here
+    public InputActionAsset playerControls;
 
     [Header("Display Settings")]
     [SerializeField] private string waitingText = "Waiting for input...";
 
     private InputActionRebindingExtensions.RebindingOperation rebindingOperation;
+    private InputActionReference currentRebindingAction;
+    private TMP_Text currentRebindingText;
     private string originalBindingName;
+    private int currentBindingIndex = -1;
 
     private void Start()
     {
-        // Debug: Check if action is properly set up
-        if (bribeAction == null)
+        // Initialize binding displays
+        InitializeBindingDisplay(bribeAction, bribeText);
+        InitializeBindingDisplay(killAction, killText);
+
+        // Initialize composite binding displays (assuming 2D Vector composite)
+        InitializeCompositeBindingDisplay(movementAction, moveForwardText, "up");
+        InitializeCompositeBindingDisplay(movementAction, moveLeftText, "left");
+        InitializeCompositeBindingDisplay(movementAction, moveBackText, "down");
+        InitializeCompositeBindingDisplay(movementAction, moveRightText, "right");
+    }
+
+    private void InitializeBindingDisplay(InputActionReference actionRef, TMP_Text textUI)
+    {
+        if (actionRef != null && actionRef.action != null && textUI != null)
         {
-            return;
+            string bindingName = actionRef.action.GetBindingDisplayString();
+            textUI.text = bindingName;
         }
+    }
 
-        if (bribeAction.action == null)
+    private void InitializeCompositeBindingDisplay(InputActionReference actionRef, TMP_Text textUI, string compositePart)
+    {
+        if (actionRef != null && actionRef.action != null && textUI != null)
         {
-            return;
+            int bindingIndex = GetCompositeBindingIndex(actionRef.action, compositePart);
+            if (bindingIndex != -1)
+            {
+                string bindingName = actionRef.action.GetBindingDisplayString(bindingIndex);
+                textUI.text = bindingName;
+            }
         }
+    }
 
-
-        // Store the original binding display name
-        originalBindingName = bribeAction.action.GetBindingDisplayString();
-        UpdateBindingText(originalBindingName);
+    private int GetCompositeBindingIndex(InputAction action, string compositePart)
+    {
+        var bindings = action.bindings;
+        for (int i = 0; i < bindings.Count; i++)
+        {
+            if (bindings[i].name.Equals(compositePart, System.StringComparison.OrdinalIgnoreCase))
+            {
+                return i;
+            }
+        }
+        return -1;
     }
 
     private void OnDestroy()
     {
-        // Clean up the rebinding operation if it's still running
         rebindingOperation?.Dispose();
     }
 
-    public void StartRebinding()
+    // Individual rebind methods
+    public void StartRebindingBribe()
     {
-        if (bribeAction == null || bribeAction.action == null)
+        StartRebinding(bribeAction, bribeText, 0);
+    }
+
+    public void StartRebindingKill()
+    {
+        StartRebinding(killAction, killText, 0);
+    }
+
+    public void StartRebindingMoveForward()
+    {
+        int bindingIndex = GetCompositeBindingIndex(movementAction.action, "up");
+        StartRebinding(movementAction, moveForwardText, bindingIndex);
+    }
+
+    public void StartRebindingMoveLeft()
+    {
+        int bindingIndex = GetCompositeBindingIndex(movementAction.action, "left");
+        StartRebinding(movementAction, moveLeftText, bindingIndex);
+    }
+
+    public void StartRebindingMoveBack()
+    {
+        int bindingIndex = GetCompositeBindingIndex(movementAction.action, "down");
+        StartRebinding(movementAction, moveBackText, bindingIndex);
+    }
+
+    public void StartRebindingMoveRight()
+    {
+        int bindingIndex = GetCompositeBindingIndex(movementAction.action, "right");
+        StartRebinding(movementAction, moveRightText, bindingIndex);
+    }
+
+    private void StartRebinding(InputActionReference actionRef, TMP_Text textUI, int bindingIndex)
+    {
+        if (actionRef == null || actionRef.action == null || textUI == null || bindingIndex == -1)
         {
+            Debug.LogError("Action reference, text UI is not assigned, or binding index is invalid!");
             return;
         }
 
-        // Make sure the action is enabled
-        if (!bribeAction.action.enabled)
-        {
-            bribeAction.action.Enable();
-        }
+        // Store references for the current rebinding
+        currentRebindingAction = actionRef;
+        currentRebindingText = textUI;
+        currentBindingIndex = bindingIndex;
+        originalBindingName = actionRef.action.GetBindingDisplayString(bindingIndex);
 
         // Disable the action temporarily during rebinding
-        bribeAction.action.Disable();
+        actionRef.action.Disable();
 
         // Update UI to show waiting state
-        UpdateBindingText(waitingText);
+        textUI.text = waitingText;
 
-        // Start the rebinding operation
-        rebindingOperation = bribeAction.action
-            .PerformInteractiveRebinding(0) // Target first binding
+        // Start the rebinding operation for the specific binding
+        rebindingOperation = actionRef.action
+            .PerformInteractiveRebinding(bindingIndex) // Target specific binding
             .WithControlsExcluding("Mouse")
-            .WithControlsExcluding("<Keyboard>/escape") // Don't allow escape as a binding
+            .WithControlsExcluding("<Keyboard>/escape")
             .OnMatchWaitForAnother(0.1f)
             .OnComplete(operation => OnRebindComplete())
             .OnCancel(operation => OnRebindCancel())
             .Start();
-
     }
 
     private void OnRebindComplete()
     {
-
-        // Apply the rebinding to the entire action asset to ensure consistency
-        if (playerControls != null)
+        // Apply the rebinding to the entire action asset
+        if (playerControls != null && currentRebindingAction != null)
         {
-            // Save the current overrides
-            string rebindings = bribeAction.action.SaveBindingOverridesAsJson();
-
-            // Apply to the action asset
+            string rebindings = currentRebindingAction.action.SaveBindingOverridesAsJson();
             playerControls.LoadBindingOverridesFromJson(rebindings);
         }
 
         // Get the new binding display name
-        string newBindingName = bribeAction.action.GetBindingDisplayString();
-        UpdateBindingText(newBindingName);
-
-        // Debug: Print all bindings after rebind
-        for (int i = 0; i < bribeAction.action.bindings.Count; i++)
+        if (currentRebindingAction != null && currentRebindingText != null)
         {
-            var binding = bribeAction.action.bindings[i];
+            string newBindingName = currentRebindingAction.action.GetBindingDisplayString(currentBindingIndex);
+            currentRebindingText.text = newBindingName;
         }
 
-        // Clean up and re-enable
         CleanupRebinding();
     }
 
     private void OnRebindCancel()
     {
+        if (currentRebindingText != null)
+        {
+            currentRebindingText.text = originalBindingName;
+        }
 
-        // Restore original binding text
-        UpdateBindingText(originalBindingName);
-
-        // Clean up and re-enable
         CleanupRebinding();
     }
 
     private void CleanupRebinding()
     {
-        // Dispose of the rebinding operation
         rebindingOperation?.Dispose();
         rebindingOperation = null;
 
-        // Re-enable the action
-        bribeAction.action.Enable();
+        if (currentRebindingAction != null && currentRebindingAction.action != null)
+        {
+            currentRebindingAction.action.Enable();
+        }
+
+        currentRebindingAction = null;
+        currentRebindingText = null;
+        currentBindingIndex = -1;
     }
 
-    private void UpdateBindingText(string text)
+    public void ResetAllBindings()
     {
-        if (bribeText != null)
-        {
-            bribeText.text = text;
-        }
+        ResetBinding(bribeAction, bribeText);
+        ResetBinding(killAction, killText);
+        ResetBinding(movementAction, moveForwardText);
+        ResetBinding(movementAction, moveLeftText);
+        ResetBinding(movementAction, moveBackText);
+        ResetBinding(movementAction, moveRightText);
     }
 
-    /*// Test method to check if the action is working
-    private void Update()
+    private void ResetBinding(InputActionReference actionRef, TMP_Text textUI)
     {
-        if (bribeAction != null && bribeAction.action != null && bribeAction.action.WasPressedThisFrame())
+        if (actionRef != null && actionRef.action != null && textUI != null)
         {
-            Debug.Log("Bribe action triggered!");
+            actionRef.action.RemoveAllBindingOverrides();
+            string resetBindingName = actionRef.action.GetBindingDisplayString();
+            textUI.text = resetBindingName;
         }
-    }*/
+    }
 }
