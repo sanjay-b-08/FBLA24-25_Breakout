@@ -29,9 +29,15 @@ public class KeyRemapper : MonoBehaviour
     private string originalBindingName;
     private int currentBindingIndex = -1;
 
+    // Key for saving binding overrides to PlayerPrefs
+    private const string BINDING_OVERRIDES_KEY = "InputBindingOverrides";
+
     private void Start()
     {
-        // Initialize binding displays
+        // Load saved binding overrides first
+        LoadBindingOverrides();
+
+        // Initialize binding displays after loading overrides
         InitializeBindingDisplay(bribeAction, bribeText);
         InitializeBindingDisplay(killAction, killText);
 
@@ -40,6 +46,30 @@ public class KeyRemapper : MonoBehaviour
         InitializeCompositeBindingDisplay(movementAction, moveLeftText, "left");
         InitializeCompositeBindingDisplay(movementAction, moveBackText, "down");
         InitializeCompositeBindingDisplay(movementAction, moveRightText, "right");
+    }
+
+    private void LoadBindingOverrides()
+    {
+        if (playerControls != null && PlayerPrefs.HasKey(BINDING_OVERRIDES_KEY))
+        {
+            string bindingOverrides = PlayerPrefs.GetString(BINDING_OVERRIDES_KEY);
+            if (!string.IsNullOrEmpty(bindingOverrides))
+            {
+                playerControls.LoadBindingOverridesFromJson(bindingOverrides);
+                Debug.Log("Loaded binding overrides from PlayerPrefs");
+            }
+        }
+    }
+
+    private void SaveBindingOverrides()
+    {
+        if (playerControls != null)
+        {
+            string bindingOverrides = playerControls.SaveBindingOverridesAsJson();
+            PlayerPrefs.SetString(BINDING_OVERRIDES_KEY, bindingOverrides);
+            PlayerPrefs.Save();
+            Debug.Log("Saved binding overrides to PlayerPrefs");
+        }
     }
 
     private void InitializeBindingDisplay(InputActionReference actionRef, TMP_Text textUI)
@@ -150,19 +180,15 @@ public class KeyRemapper : MonoBehaviour
 
     private void OnRebindComplete()
     {
-        // Apply the rebinding to the entire action asset
-        if (playerControls != null && currentRebindingAction != null)
-        {
-            string rebindings = currentRebindingAction.action.SaveBindingOverridesAsJson();
-            playerControls.LoadBindingOverridesFromJson(rebindings);
-        }
-
-        // Get the new binding display name
+        // Get the new binding display name first
         if (currentRebindingAction != null && currentRebindingText != null)
         {
             string newBindingName = currentRebindingAction.action.GetBindingDisplayString(currentBindingIndex);
             currentRebindingText.text = newBindingName;
         }
+
+        // Save the binding overrides to persistent storage
+        SaveBindingOverrides();
 
         CleanupRebinding();
     }
@@ -194,21 +220,47 @@ public class KeyRemapper : MonoBehaviour
 
     public void ResetAllBindings()
     {
-        ResetBinding(bribeAction, bribeText);
-        ResetBinding(killAction, killText);
-        ResetBinding(movementAction, moveForwardText);
-        ResetBinding(movementAction, moveLeftText);
-        ResetBinding(movementAction, moveBackText);
-        ResetBinding(movementAction, moveRightText);
+        // Remove overrides from all actions
+        if (playerControls != null)
+        {
+            foreach (var actionMap in playerControls.actionMaps)
+            {
+                foreach (var action in actionMap.actions)
+                {
+                    action.RemoveAllBindingOverrides();
+                }
+            }
+        }
+
+        // Clear saved overrides
+        PlayerPrefs.DeleteKey(BINDING_OVERRIDES_KEY);
+        PlayerPrefs.Save();
+
+        // Update UI displays to show original bindings
+        RefreshAllBindingDisplays();
+
+        Debug.Log("Reset all bindings to defaults");
     }
 
-    private void ResetBinding(InputActionReference actionRef, TMP_Text textUI)
+    private void RefreshAllBindingDisplays()
     {
-        if (actionRef != null && actionRef.action != null && textUI != null)
-        {
-            actionRef.action.RemoveAllBindingOverrides();
-            string resetBindingName = actionRef.action.GetBindingDisplayString();
-            textUI.text = resetBindingName;
-        }
+        InitializeBindingDisplay(bribeAction, bribeText);
+        InitializeBindingDisplay(killAction, killText);
+        InitializeCompositeBindingDisplay(movementAction, moveForwardText, "up");
+        InitializeCompositeBindingDisplay(movementAction, moveLeftText, "left");
+        InitializeCompositeBindingDisplay(movementAction, moveBackText, "down");
+        InitializeCompositeBindingDisplay(movementAction, moveRightText, "right");
+    }
+
+    // Optional: Method to manually save current bindings (useful for settings menu)
+    public void SaveCurrentBindings()
+    {
+        SaveBindingOverrides();
+    }
+
+    // Optional: Method to check if there are saved bindings
+    public bool HasSavedBindings()
+    {
+        return PlayerPrefs.HasKey(BINDING_OVERRIDES_KEY);
     }
 }
