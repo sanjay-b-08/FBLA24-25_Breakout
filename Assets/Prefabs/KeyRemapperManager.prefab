@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &355995783081918117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5661675150788275033}
+  - component: {fileID: 474058195422191691}
+  m_Layer: 0
+  m_Name: KeyRemapperManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5661675150788275033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355995783081918117}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 897.78687, y: 522.9817, z: -1.3425083}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &474058195422191691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355995783081918117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e01d42fa2667f478c6a4e1e36dcf49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bribeAction: {fileID: -8773913327719001453, guid: 460264fa836b6d6448c7b2f12e61ca52, type: 3}
+  killAction: {fileID: -719160229837493711, guid: 460264fa836b6d6448c7b2f12e61ca52, type: 3}
+  movementAction: {fileID: -9000432975922255397, guid: 460264fa836b6d6448c7b2f12e61ca52, type: 3}
+  bribeText: {fileID: 0}
+  killText: {fileID: 0}
+  moveForwardText: {fileID: 0}
+  moveLeftText: {fileID: 0}
+  moveBackText: {fileID: 0}
+  moveRightText: {fileID: 0}
+  playerControls: {fileID: -944628639613478452, guid: 460264fa836b6d6448c7b2f12e61ca52, type: 3}
+  waitingText: Waiting for input...

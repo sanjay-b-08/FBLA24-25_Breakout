@@ -6,6 +6,8 @@ public class KeyRemapper : MonoBehaviour
 {
     //THE KEY REBINDS PERSIST FOR EACH PLAY THROUGH, DOES NOT RESET!!!!!!!
 
+    // Singleton instance
+    public static KeyRemapper Instance { get; private set; }
 
     [Header("Action References")]
     public InputActionReference bribeAction;
@@ -35,11 +37,36 @@ public class KeyRemapper : MonoBehaviour
     // Key for saving binding overrides to PlayerPrefs
     private const string BINDING_OVERRIDES_KEY = "InputBindingOverrides";
 
+    private void Awake()
+    {
+        // Singleton pattern implementation
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+
+            // Load saved binding overrides when singleton is first created
+            LoadBindingOverrides();
+        }
+        else
+        {
+            // If an instance already exists, destroy this duplicate
+            Destroy(gameObject);
+            return;
+        }
+    }
+
     private void Start()
     {
-        // Load saved binding overrides first
-        LoadBindingOverrides();
+        // Only initialize if this is the singleton instance
+        if (Instance == this)
+        {
+            InitializeAllBindingDisplays();
+        }
+    }
 
+    private void InitializeAllBindingDisplays()
+    {
         // Initialize binding displays after loading overrides
         InitializeBindingDisplay(bribeAction, bribeText);
         InitializeBindingDisplay(killAction, killText);
@@ -49,6 +76,22 @@ public class KeyRemapper : MonoBehaviour
         InitializeCompositeBindingDisplay(movementAction, moveLeftText, "left");
         InitializeCompositeBindingDisplay(movementAction, moveBackText, "down");
         InitializeCompositeBindingDisplay(movementAction, moveRightText, "right");
+    }
+
+    // Method to update UI references when switching scenes
+    public void UpdateUIReferences(TMP_Text bribeText, TMP_Text killText,
+                                 TMP_Text moveForwardText, TMP_Text moveLeftText,
+                                 TMP_Text moveBackText, TMP_Text moveRightText)
+    {
+        this.bribeText = bribeText;
+        this.killText = killText;
+        this.moveForwardText = moveForwardText;
+        this.moveLeftText = moveLeftText;
+        this.moveBackText = moveBackText;
+        this.moveRightText = moveRightText;
+
+        // Refresh displays with new UI references
+        InitializeAllBindingDisplays();
     }
 
     private void LoadBindingOverrides()
@@ -113,6 +156,12 @@ public class KeyRemapper : MonoBehaviour
     private void OnDestroy()
     {
         rebindingOperation?.Dispose();
+
+        // Clear the singleton reference if this instance is being destroyed
+        if (Instance == this)
+        {
+            Instance = null;
+        }
     }
 
     // Individual rebind methods
