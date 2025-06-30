@@ -789,7 +789,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "- You are in a high security prison for a crime you didn't commit; Escape.
+  m_text: "- You are in a high security prison for a crime you didn't commit. Escape.
     \n\n- Remember: sometimes your human morals give you a better chance of escape.
     Sometimes they do not.\n\n- Get out as fast as possible."
   m_isRightToLeft: 0
